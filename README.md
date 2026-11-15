@@ -20,6 +20,8 @@ The app supplies informational steps and official links. Personal eligibility, s
 
 ## Implementation notes
 
+See the [technical walkthrough](docs/TECHNICAL_WALKTHROUGH.md) for architecture diagrams, ranking equations, and worked examples from the policy search and Evidence Lab.
+
 The explorer's search scores help rank catalogue matches and are not approval probabilities. Local Ollama, when installed, can suggest a search intent for an unclear query; it does not provide an eligibility decision. The catalogue search works without Ollama. There is no live myScheme/API Setu integration in this fork; the explorer links to public sources.
 
 See [deployment instructions](docs/DEPLOYMENT.md) for running the services outside the local launcher. Other documents in this fork include inherited SoftGraph research references.
