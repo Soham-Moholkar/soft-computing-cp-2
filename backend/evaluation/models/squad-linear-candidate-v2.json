@@ -1,0 +1,50 @@
+{
+  "schema_version": "1",
+  "feature_version": "ranking-features-1",
+  "status": "candidate",
+  "domain": "general-wikipedia-english",
+  "weights": [
+    0.864312951092817,
+    0.0,
+    0.0,
+    0.13568704890718297
+  ],
+  "dataset_sha256": "9270d32c8de9313e8660a4f02d99fcd01b7d3862762d500c7bf2f68da1f7d7ee",
+  "training_code_sha256": "380ea5260799c7f4dcd533b40ec7282633b1dcc0ea4624a84220b78c12ddf1f0",
+  "seed": 1729,
+  "training": {
+    "method": "projected full-batch pairwise logistic loss with L2-to-baseline",
+    "steps": 300,
+    "learning_rate": 0.2,
+    "regularization": 0.01,
+    "pairs": 775,
+    "queries_used": 161,
+    "queries_skipped_missing_pair": 7,
+    "train_review_status": "upstream_human_annotated",
+    "train_family_count": 14,
+    "loss_every_25_steps": [
+      0.5887991159510033,
+      0.5301597139770213,
+      0.5301422627152238,
+      0.5301264790859739,
+      0.5301122037311619,
+      0.5300992925208714,
+      0.5300876150981776,
+      0.5300770535630047,
+      0.5300675012817534,
+      0.5300588618106802,
+      0.5300510479221588,
+      0.5300439807239918,
+      0.53003758886288
+    ],
+    "baseline_weights": [
+      0.6,
+      0.25,
+      0.15,
+      0
+    ],
+    "limitations": "Non-judged candidates are treated as negatives; independent corpus-wide judgment pooling is required before promotion."
+  },
+  "promotion": null,
+  "checksum": "220334469e79b6e9ff92c0b0a877b87f9d655d7c759b0d12796193b7f6b490d5"
+}

@@ -1,0 +1,390 @@
+{
+  "documents": 120,
+  "repeats": 20,
+  "cold_ms": 77.5034999824129,
+  "warm_p50_ms": 53.69244999019429,
+  "warm_p95_ms": 60.26457002299139,
+  "samples_ms": [
+    77.5034999824129,
+    55.65530000603758,
+    52.38410001038574,
+    56.817500008037314,
+    55.950399982975796,
+    51.04769999161363,
+    52.56020001252182,
+    52.05660001956858,
+    51.48569997982122,
+    52.77460001525469,
+    53.86629997519776,
+    52.536999981384724,
+    52.142700005788356,
+    54.270399996312335,
+    55.200799979502335,
+    52.58209997555241,
+    53.51860000519082,
+    54.211100010434166,
+    60.06090002483688,
+    64.13429998792708,
+    55.79729998135008
+  ],
+  "stage_timings": [
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 26.31,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.73,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.29,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.14,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 41.87,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.29,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.03,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.27,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.26,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.5,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 42.75,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.3,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 2.7,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 44.59,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.26,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 2.82,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 38.43,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.21,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.09,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.94,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.22,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.0,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.1,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.27,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.07,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.9,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.44,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 2.7,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.87,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.22,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.09,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.1,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.21,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.17,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.22,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.33,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.45,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 38.92,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.21,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.16,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.11,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.23,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.66,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 42.4,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.27,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 2.75,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.38,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.25,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 2.94,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.93,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.24,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.13,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 39.62,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.23,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 3.16,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 45.89,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.33,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 2.83,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 48.26,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.59,
+        "status": "complete"
+      }
+    ],
+    [
+      {
+        "stage": "Source and graph snapshot",
+        "duration_ms": 4.14,
+        "status": "complete"
+      },
+      {
+        "stage": "Local ranking",
+        "duration_ms": 41.73,
+        "status": "complete"
+      },
+      {
+        "stage": "Evidence selection and citation checks",
+        "duration_ms": 1.17,
+        "status": "complete"
+      }
+    ]
+  ],
+  "limits": "Synthetic in-process shortlist stress run; no graph builds, provider or deployed-network latency."
+}

@@ -1,0 +1,5 @@
+Soft computing handles uncertainty, imprecision and approximation using fuzzy logic, evolutionary computing, swarm intelligence and hybrid systems.
+
+In SoftGraph, fuzzy logic estimates entity trust, relation strength and retrieval relevance. Genetic algorithms evolve extraction thresholds, membership parameters and ranking weights. Particle Swarm Optimization refines retrieval parameters. Ant Colony Optimization explores multi-hop knowledge graph paths using pheromone and heuristic desirability. Grey Wolf Optimization selects candidate subgraphs, while the Whale Optimization Algorithm searches pruning configurations.
+
+The final retrieval system combines semantic similarity, graph topology, fuzzy confidence, entity importance, source reliability, path quality and recency. Every answer retains evidence, source reliability, a graph path, fired fuzzy rules and a score breakdown.

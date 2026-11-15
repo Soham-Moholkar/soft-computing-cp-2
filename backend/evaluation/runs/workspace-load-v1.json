@@ -1,0 +1,376 @@
+{
+  "protocol": "local-concurrent-smoke-1",
+  "requests": 60,
+  "concurrency": 4,
+  "failures": 0,
+  "evidence_responses": 20,
+  "p50_ms": 73.13689999864437,
+  "p95_ms": 89.05740000773221,
+  "duration_seconds": 1.1542663000000175,
+  "provider_enabled": false,
+  "production_sla": false,
+  "corpus": "four small theoretical documents per isolated workspace",
+  "limitations": "In-process test client, warm small corpora. Does not test network, large corpora, uploads, distributed workers or hostile parser resources.",
+  "rows": [
+    {
+      "ms": 73.61190000665374,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 76.10110001405701,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 78.63640002324246,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 97.75029998854734,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 64.5098999957554,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 76.60510001005605,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 79.41370000480674,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 83.80289998603985,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 72.51779999933206,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 63.94160000490956,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 72.90470000589266,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 68.63419999717735,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 60.23920001462102,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 76.79900000221096,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 77.51519998419099,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 62.30259998119436,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 82.8066999965813,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 102.8091000043787,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 70.55299999774434,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 71.66069999220781,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 87.30829998967238,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 63.24699998367578,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 73.10860001598485,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 82.35090001835488,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 57.315199985168874,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 63.718600024003536,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 72.7574999909848,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 74.8590000148397,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 77.39720001700334,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 71.7000000004191,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 72.13539999793284,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 71.61769998492673,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 62.53700001980178,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 82.8414999996312,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 72.93900000513531,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 65.66799999563955,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 80.2372999896761,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 88.55670000775717,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 60.62460000975989,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 74.70450000255369,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 68.46780001069419,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 65.54209999740124,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 70.36789998528548,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 75.04460000200197,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 88.2178999891039,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 78.06800000253133,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 73.80730001023039,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 78.80079999449663,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 69.75870000314899,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 67.04829999944195,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 74.37560000107624,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 63.27899999450892,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 56.61410000175238,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 64.75210000644438,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 98.9310999866575,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 89.05740000773221,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 88.24679997633211,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    },
+    {
+      "ms": 74.25239999429323,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal"
+    },
+    {
+      "ms": 71.11290001193993,
+      "ok": true,
+      "evidence": false,
+      "workspace": "engineering"
+    },
+    {
+      "ms": 73.16519998130389,
+      "ok": true,
+      "evidence": false,
+      "workspace": "course"
+    }
+  ]
+}

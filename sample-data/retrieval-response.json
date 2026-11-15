@@ -1,0 +1,837 @@
+{
+  "schema_version": "1.0",
+  "result_id": "retrieval-f871fa582eb54b51a469c768825e3c10",
+  "query": "How is PSO related to Knowledge Graph?",
+  "answer": "Source excerpts (inspect these for relevance to your question):\n“PSO improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph.” [1]\n“ACO explores Graph Paths.” [2]",
+  "answer_status": "evidence",
+  "confidence": 0.7968337524687021,
+  "confidence_label": "Heuristic ranking score; not a probability of correctness",
+  "mode": "hybrid",
+  "nodes": [
+    {
+      "schema_version": "1.0",
+      "entity_id": "entity-08be8e73d94a24526265ab997a4215a6871c03f00ebc46560aa7e31459299337",
+      "canonical_name": "Knowledge Graph",
+      "entity_type": "Technology",
+      "aliases": [
+        "knowledge graphs",
+        "knowledge network"
+      ],
+      "description": "Recognized course concept. Inspect its source evidence for assertions.",
+      "source_chunks": [
+        "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0"
+      ],
+      "extraction_confidence": 0.95,
+      "fuzzy_confidence": 0.95,
+      "centrality_score": 0.25,
+      "importance_score": 0.74,
+      "embedding_reference": null
+    },
+    {
+      "schema_version": "1.0",
+      "entity_id": "entity-3a9d9739b5b3d9dccc8db65ca2066b763e01ce970bb51d1c5eee1f2f18b734c5",
+      "canonical_name": "Ant Colony Optimization",
+      "entity_type": "Process",
+      "aliases": [
+        "ACO"
+      ],
+      "description": "Recognized course concept. Inspect its source evidence for assertions.",
+      "source_chunks": [
+        "chunk-fe2f610bf15ee2488542416458a49403ba64045942b7610ac78fbcf986494511-0"
+      ],
+      "extraction_confidence": 0.85,
+      "fuzzy_confidence": 0.85,
+      "centrality_score": 0.25,
+      "importance_score": 0.67,
+      "embedding_reference": null
+    },
+    {
+      "schema_version": "1.0",
+      "entity_id": "entity-4b9b4e844fb8942dce50536385f508357b8031dbfb9ca29d7333696a93fbcda8",
+      "canonical_name": "Hybrid Retrieval",
+      "entity_type": "Process",
+      "aliases": [
+        "hybrid search"
+      ],
+      "description": "Recognized course concept. Inspect its source evidence for assertions.",
+      "source_chunks": [
+        "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0"
+      ],
+      "extraction_confidence": 0.95,
+      "fuzzy_confidence": 0.95,
+      "centrality_score": 0.5,
+      "importance_score": 0.815,
+      "embedding_reference": null
+    },
+    {
+      "schema_version": "1.0",
+      "entity_id": "entity-553e59b941625a07dce131232c4852528dd88d9161f56dab7a68309e15d1a981",
+      "canonical_name": "Particle Swarm Optimization",
+      "entity_type": "Process",
+      "aliases": [
+        "PSO"
+      ],
+      "description": "Recognized course concept. Inspect its source evidence for assertions.",
+      "source_chunks": [
+        "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0"
+      ],
+      "extraction_confidence": 0.85,
+      "fuzzy_confidence": 0.85,
+      "centrality_score": 0.25,
+      "importance_score": 0.67,
+      "embedding_reference": null
+    },
+    {
+      "schema_version": "1.0",
+      "entity_id": "entity-9ad794352ef68a3bd476e3fcd18f837a93470d2227e9366bcb05996bf9c9fe39",
+      "canonical_name": "Graph Paths",
+      "entity_type": "Concept",
+      "aliases": [
+        "graph path",
+        "knowledge graph paths"
+      ],
+      "description": "Recognized course concept. Inspect its source evidence for assertions.",
+      "source_chunks": [
+        "chunk-fe2f610bf15ee2488542416458a49403ba64045942b7610ac78fbcf986494511-0"
+      ],
+      "extraction_confidence": 0.95,
+      "fuzzy_confidence": 0.95,
+      "centrality_score": 0.25,
+      "importance_score": 0.74,
+      "embedding_reference": null
+    }
+  ],
+  "relations": [
+    {
+      "schema_version": "1.0",
+      "relation_id": "relation-15535367e69103447859bade4592d78be1086cfa8c121a0af6cdcd841eb1f240",
+      "source_entity": "entity-3a9d9739b5b3d9dccc8db65ca2066b763e01ce970bb51d1c5eee1f2f18b734c5",
+      "target_entity": "entity-9ad794352ef68a3bd476e3fcd18f837a93470d2227e9366bcb05996bf9c9fe39",
+      "relation_type": "explores",
+      "evidence": "ACO explores Graph Paths",
+      "source_chunk": "chunk-fe2f610bf15ee2488542416458a49403ba64045942b7610ac78fbcf986494511-0",
+      "extraction_confidence": 0.85,
+      "fuzzy_strength": 0.85,
+      "semantic_strength": 0.85,
+      "temporal_strength": 1.0,
+      "final_weight": 0.85,
+      "source_chunks": [
+        "chunk-fe2f610bf15ee2488542416458a49403ba64045942b7610ac78fbcf986494511-0"
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "relation_id": "relation-de540848fd414f018e624b1a306b0d44d9439e65069eb40a15ebdf4eccd65c9b",
+      "source_entity": "entity-4b9b4e844fb8942dce50536385f508357b8031dbfb9ca29d7333696a93fbcda8",
+      "target_entity": "entity-08be8e73d94a24526265ab997a4215a6871c03f00ebc46560aa7e31459299337",
+      "relation_type": "uses",
+      "evidence": "Hybrid Retrieval uses Knowledge Graph",
+      "source_chunk": "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0",
+      "extraction_confidence": 0.9,
+      "fuzzy_strength": 0.9,
+      "semantic_strength": 0.9,
+      "temporal_strength": 1.0,
+      "final_weight": 0.9,
+      "source_chunks": [
+        "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0"
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "relation_id": "relation-eb845136a4be5ce0f4d251573b0d61a79b64bd0f3a6357508f854c75f64f1a06",
+      "source_entity": "entity-553e59b941625a07dce131232c4852528dd88d9161f56dab7a68309e15d1a981",
+      "target_entity": "entity-4b9b4e844fb8942dce50536385f508357b8031dbfb9ca29d7333696a93fbcda8",
+      "relation_type": "improves",
+      "evidence": "PSO improves Hybrid Retrieval",
+      "source_chunk": "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0",
+      "extraction_confidence": 0.85,
+      "fuzzy_strength": 0.85,
+      "semantic_strength": 0.85,
+      "temporal_strength": 1.0,
+      "final_weight": 0.85,
+      "source_chunks": [
+        "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "schema_version": "1.0",
+      "citation": 1,
+      "chunk_id": "chunk-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d-0",
+      "document_id": "document-6ab4f1199d371a4af52344d722f2d0adeaa826b8db2262fae20a4eb4f5f3ab9d",
+      "document_name": "PSO source",
+      "text": "PSO improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph.",
+      "excerpt": "PSO improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph.",
+      "source_location": {
+        "section": 1
+      },
+      "lexical_score": 0.685692087447837,
+      "graph_score": 1.0,
+      "fuzzy_score": 0.90279,
+      "rank_score": 0.7968337524687021
+    },
+    {
+      "schema_version": "1.0",
+      "citation": 2,
+      "chunk_id": "chunk-fe2f610bf15ee2488542416458a49403ba64045942b7610ac78fbcf986494511-0",
+      "document_id": "document-fe2f610bf15ee2488542416458a49403ba64045942b7610ac78fbcf986494511",
+      "document_name": "ACO source",
+      "text": "ACO explores Graph Paths.",
+      "excerpt": "ACO explores Graph Paths.",
+      "source_location": {
+        "section": 1
+      },
+      "lexical_score": 0.1172182242185176,
+      "graph_score": 0.0,
+      "fuzzy_score": 0.12902,
+      "rank_score": 0.08968393453111055
+    }
+  ],
+  "paths": [
+    {
+      "schema_version": "1.0",
+      "labels": [
+        "Particle Swarm Optimization",
+        "Hybrid Retrieval",
+        "Knowledge Graph"
+      ],
+      "entity_ids": [
+        "entity-553e59b941625a07dce131232c4852528dd88d9161f56dab7a68309e15d1a981",
+        "entity-4b9b4e844fb8942dce50536385f508357b8031dbfb9ca29d7333696a93fbcda8",
+        "entity-08be8e73d94a24526265ab997a4215a6871c03f00ebc46560aa7e31459299337"
+      ],
+      "relation_ids": [
+        "relation-eb845136a4be5ce0f4d251573b0d61a79b64bd0f3a6357508f854c75f64f1a06",
+        "relation-de540848fd414f018e624b1a306b0d44d9439e65069eb40a15ebdf4eccd65c9b"
+      ],
+      "citation_ids": [
+        1
+      ],
+      "score": 0.85,
+      "traversal": "undirected BFS; edge direction remains in the relations"
+    }
+  ],
+  "score_breakdown": [
+    {
+      "schema_version": "1.0",
+      "component": "Lexical BM25",
+      "raw_score": 0.685692087447837,
+      "weight": 0.6,
+      "contribution": 0.4114152524687022
+    },
+    {
+      "schema_version": "1.0",
+      "component": "Graph proximity",
+      "raw_score": 1.0,
+      "weight": 0.25,
+      "contribution": 0.25
+    },
+    {
+      "schema_version": "1.0",
+      "component": "Fuzzy relevance",
+      "raw_score": 0.90279,
+      "weight": 0.15,
+      "contribution": 0.1354185
+    }
+  ],
+  "fuzzy_explanation": {
+    "schema_version": "1.0",
+    "score": 0.90279,
+    "label": "Highly relevant",
+    "memberships": {
+      "semantic_similarity_low": 0.0,
+      "semantic_similarity_medium": 0.2572316502086518,
+      "semantic_similarity_high": 0.7427683497913482,
+      "relation_strength_weak": 0.0,
+      "relation_strength_moderate": 0.0,
+      "relation_strength_strong": 1.0,
+      "graph_distance_near": 1.0,
+      "graph_distance_medium": 0.0,
+      "graph_distance_far": 0.0
+    },
+    "rule_firings": [
+      {
+        "schema_version": "1.0",
+        "rule_id": "R1",
+        "rule": "High semantic AND strong relation AND near path → highly relevant",
+        "antecedent_memberships": {
+          "semantic_similarity.high": 0.7427683497913482,
+          "relation_strength.strong": 1.0,
+          "graph_distance.near": 1.0
+        },
+        "unweighted_firing": 0.7427683497913482,
+        "weight": 1.0,
+        "weighted_firing": 0.7427683497913482,
+        "strength": 0.7427683497913482,
+        "consequent": "highly_relevant"
+      },
+      {
+        "schema_version": "1.0",
+        "rule_id": "R2",
+        "rule": "Medium semantic AND moderate relation → relevant",
+        "antecedent_memberships": {
+          "semantic_similarity.medium": 0.2572316502086518,
+          "relation_strength.moderate": 0.0
+        },
+        "unweighted_firing": 0.0,
+        "weight": 0.9,
+        "weighted_firing": 0.0,
+        "strength": 0.0,
+        "consequent": "relevant"
+      },
+      {
+        "schema_version": "1.0",
+        "rule_id": "R3",
+        "rule": "Low semantic OR weak relation OR far path → irrelevant",
+        "antecedent_memberships": {
+          "semantic_similarity.low": 0.0,
+          "relation_strength.weak": 0.0,
+          "graph_distance.far": 0.0
+        },
+        "unweighted_firing": 0.0,
+        "weight": 1.0,
+        "weighted_firing": 0.0,
+        "strength": 0.0,
+        "consequent": "irrelevant"
+      }
+    ],
+    "aggregated_output": [
+      {
+        "schema_version": "1.0",
+        "x": 0.0,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.01,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.02,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.03,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.04,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.05,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.06,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.07,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.08,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.09,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.1,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.11,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.12,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.13,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.14,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.15,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.16,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.17,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.18,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.19,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.2,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.21,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.22,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.23,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.24,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.25,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.26,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.27,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.28,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.29,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.3,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.31,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.32,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.33,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.34,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.35,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.36,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.37,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.38,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.39,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.4,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.41,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.42,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.43,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.44,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.45,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.46,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.47,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.48,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.49,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.5,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.51,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.52,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.53,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.54,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.55,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.56,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.57,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.58,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.59,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.6,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.61,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.62,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.63,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.64,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.65,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.66,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.67,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.68,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.69,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.7,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.71,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.72,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.73,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.74,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.75,
+        "membership": 0.0
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.76,
+        "membership": 0.06666666666666672
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.77,
+        "membership": 0.13333333333333344
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.78,
+        "membership": 0.20000000000000015
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.79,
+        "membership": 0.2666666666666669
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.8,
+        "membership": 0.3333333333333336
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.81,
+        "membership": 0.4000000000000003
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.82,
+        "membership": 0.4666666666666663
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.83,
+        "membership": 0.533333333333333
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.84,
+        "membership": 0.5999999999999998
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.85,
+        "membership": 0.6666666666666664
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.86,
+        "membership": 0.7333333333333332
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.87,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.88,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.89,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.9,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.91,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.92,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.93,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.94,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.95,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.96,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.97,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.98,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 0.99,
+        "membership": 0.7427683497913482
+      },
+      {
+        "schema_version": "1.0",
+        "x": 1.0,
+        "membership": 0.7427683497913482
+      }
+    ],
+    "controller_decision": "Accept strongly",
+    "variable_set_version": "fuzzy-variables-1",
+    "rule_set_version": "fuzzy-rules-1",
+    "inference_method": "mamdani",
+    "defuzzification_method": "centroid",
+    "defuzzification_applied": true
+  },
+  "graph_version": "graph-sqlite-1",
+  "index_version": "bm25-3b0c42ce13a49c2b41963a4f",
+  "configuration_version": "retrieval-bm25-1",
+  "provider_status": "disabled",
+  "warnings": [
+    "Lexical BM25 baseline; no embeddings or trained optimizers. Fuzzy semantic_similarity receives a lexical proxy. Source reliability is unrated."
+  ],
+  "timeline": [
+    {
+      "stage": "Source and graph snapshot",
+      "duration_ms": 3.78,
+      "status": "complete"
+    },
+    {
+      "stage": "Local ranking",
+      "duration_ms": 5.14,
+      "status": "complete"
+    },
+    {
+      "stage": "Evidence selection and citation checks",
+      "duration_ms": 2.84,
+      "status": "complete"
+    }
+  ]
+}

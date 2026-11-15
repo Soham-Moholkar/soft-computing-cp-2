@@ -1,0 +1,16 @@
+EQUIPMENT READINESS PROCEDURE
+Synthetic operations exercise
+
+The Equipment Register supports the Asset Audit.
+The Asset Audit triggers the Service Review.
+The Service Review requires the Maintenance Schedule.
+The Maintenance Schedule uses the Inspection Calendar.
+The Inspection Calendar routes to the Facilities Inbox.
+The Facilities Inbox feeds the Daily Brief.
+The Daily Brief documents the Shift Roster.
+The Shift Roster requires the Coverage Plan.
+The Coverage Plan depends on the Escalation Roster.
+The Escalation Roster supports the Weekend Desk.
+The Weekend Desk verifies the Dispatch Log.
+The Dispatch Log might trigger the Service Review.
+The Dispatch Log does not support the Daily Brief.

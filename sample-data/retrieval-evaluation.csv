@@ -1,0 +1,10 @@
+query_id,query,relevant_entity,judgment
+q01,How does PSO improve knowledge graph retrieval?,Particle Swarm Optimization,3
+q01,How does PSO improve knowledge graph retrieval?,Retrieval Relevance,3
+q01,How does PSO improve knowledge graph retrieval?,Knowledge Graph,2
+q02,How does ACO find multi-hop evidence?,Ant Colony Optimization,3
+q02,How does ACO find multi-hop evidence?,Graph Traversal,3
+q02,How does ACO find multi-hop evidence?,ACO Pheromone,2
+q03,How can GA tune fuzzy logic?,Genetic Algorithm,3
+q03,How can GA tune fuzzy logic?,Fuzzy Logic,3
+q03,How can GA tune fuzzy logic?,Membership Function,2

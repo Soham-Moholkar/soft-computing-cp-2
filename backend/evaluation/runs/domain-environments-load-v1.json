@@ -1,0 +1,438 @@
+{
+  "protocol": "local-concurrent-smoke-2",
+  "workspaces": 6,
+  "distinct_queries": 18,
+  "requests": 60,
+  "concurrency": 4,
+  "failures": 0,
+  "evidence_responses": 60,
+  "p50_ms": 22.501350002130494,
+  "p95_ms": 47.24680000799708,
+  "duration_seconds": 0.37172150000697,
+  "provider_enabled": false,
+  "production_sla": false,
+  "corpus": "four small theoretical documents per isolated workspace",
+  "limitations": "In-process test client, warm small corpora. Does not test network, large corpora, uploads, distributed workers or hostile parser resources.",
+  "rows": [
+    {
+      "ms": 28.060900018317625,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Care Handoff use Discharge Checklist?"
+    },
+    {
+      "ms": 12.763400009134784,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Irrigation Plan use Soil Moisture?"
+    },
+    {
+      "ms": 28.111399995395914,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Counterparty Review use Exposure Register?"
+    },
+    {
+      "ms": 28.312500013271347,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How does Knowledge Vault use Knowledge Graph?"
+    },
+    {
+      "ms": 32.718899979954585,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Incident Response use Reliability Runbook?"
+    },
+    {
+      "ms": 20.45069998712279,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Particle Swarm Optimization tune Ranking Weights?"
+    },
+    {
+      "ms": 19.861300010234118,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How is Referral Queue related to Follow Up Plan?"
+    },
+    {
+      "ms": 20.972900005290285,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How is Pest Inspection related to Crop Schedule?"
+    },
+    {
+      "ms": 22.97670001280494,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How is Liquidity Review related to Risk Committee?"
+    },
+    {
+      "ms": 23.157000017818063,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How do Research Notes support Project Atlas?"
+    },
+    {
+      "ms": 22.515299991937354,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How is Payments API related to Queue Worker?"
+    },
+    {
+      "ms": 19.593900011386722,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Fuzzy Logic support Hybrid Retrieval?"
+    },
+    {
+      "ms": 21.731799992267042,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Evidence Review support Procedure Library?"
+    },
+    {
+      "ms": 24.32630001567304,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Weather Record support Water Budget?"
+    },
+    {
+      "ms": 22.66550000058487,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Control Checklist support Audit Trail?"
+    },
+    {
+      "ms": 23.835600004531443,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How is Reading Queue related to Project Atlas?"
+    },
+    {
+      "ms": 25.594200007617474,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Release Checklist improve Incident Response?"
+    },
+    {
+      "ms": 24.548399989726022,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How is Genetic Algorithm related to Knowledge Graph?"
+    },
+    {
+      "ms": 17.369400011375546,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Care Handoff use Discharge Checklist?"
+    },
+    {
+      "ms": 23.975699994480237,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Irrigation Plan use Soil Moisture?"
+    },
+    {
+      "ms": 24.38999997684732,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Counterparty Review use Exposure Register?"
+    },
+    {
+      "ms": 22.487400012323633,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How does Knowledge Vault use Knowledge Graph?"
+    },
+    {
+      "ms": 21.206599980359897,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Incident Response use Reliability Runbook?"
+    },
+    {
+      "ms": 19.492799998261034,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Particle Swarm Optimization tune Ranking Weights?"
+    },
+    {
+      "ms": 25.38730000378564,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How is Referral Queue related to Follow Up Plan?"
+    },
+    {
+      "ms": 25.70289999130182,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How is Pest Inspection related to Crop Schedule?"
+    },
+    {
+      "ms": 26.1711000057403,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How is Liquidity Review related to Risk Committee?"
+    },
+    {
+      "ms": 21.387799992226064,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How do Research Notes support Project Atlas?"
+    },
+    {
+      "ms": 22.226400004001334,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How is Payments API related to Queue Worker?"
+    },
+    {
+      "ms": 18.347000004723668,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Fuzzy Logic support Hybrid Retrieval?"
+    },
+    {
+      "ms": 34.24300000187941,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Evidence Review support Procedure Library?"
+    },
+    {
+      "ms": 16.261400014627725,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Weather Record support Water Budget?"
+    },
+    {
+      "ms": 19.955399999162182,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Control Checklist support Audit Trail?"
+    },
+    {
+      "ms": 18.41039999271743,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How is Reading Queue related to Project Atlas?"
+    },
+    {
+      "ms": 63.55590000748634,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Release Checklist improve Incident Response?"
+    },
+    {
+      "ms": 47.24680000799708,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How is Genetic Algorithm related to Knowledge Graph?"
+    },
+    {
+      "ms": 21.90519997384399,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Care Handoff use Discharge Checklist?"
+    },
+    {
+      "ms": 22.113599989097565,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Irrigation Plan use Soil Moisture?"
+    },
+    {
+      "ms": 49.45399999269284,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Counterparty Review use Exposure Register?"
+    },
+    {
+      "ms": 49.56970000057481,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How does Knowledge Vault use Knowledge Graph?"
+    },
+    {
+      "ms": 24.965699994936585,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Incident Response use Reliability Runbook?"
+    },
+    {
+      "ms": 26.93269998417236,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Particle Swarm Optimization tune Ranking Weights?"
+    },
+    {
+      "ms": 26.604700018651783,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How is Referral Queue related to Follow Up Plan?"
+    },
+    {
+      "ms": 27.967600006377324,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How is Pest Inspection related to Crop Schedule?"
+    },
+    {
+      "ms": 23.621500004082918,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How is Liquidity Review related to Risk Committee?"
+    },
+    {
+      "ms": 20.78859999892302,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How do Research Notes support Project Atlas?"
+    },
+    {
+      "ms": 17.88609998766333,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How is Payments API related to Queue Worker?"
+    },
+    {
+      "ms": 19.280399981653318,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Fuzzy Logic support Hybrid Retrieval?"
+    },
+    {
+      "ms": 21.897500002523884,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Evidence Review support Procedure Library?"
+    },
+    {
+      "ms": 17.686699982732534,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Weather Record support Water Budget?"
+    },
+    {
+      "ms": 23.46870000474155,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Control Checklist support Audit Trail?"
+    },
+    {
+      "ms": 23.639299994101748,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How is Reading Queue related to Project Atlas?"
+    },
+    {
+      "ms": 22.273899987339973,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Release Checklist improve Incident Response?"
+    },
+    {
+      "ms": 17.880300001706928,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How is Genetic Algorithm related to Knowledge Graph?"
+    },
+    {
+      "ms": 19.49639999656938,
+      "ok": true,
+      "evidence": true,
+      "workspace": "healthcare",
+      "query": "How does Care Handoff use Discharge Checklist?"
+    },
+    {
+      "ms": 22.999400011030957,
+      "ok": true,
+      "evidence": true,
+      "workspace": "agriculture",
+      "query": "How does Irrigation Plan use Soil Moisture?"
+    },
+    {
+      "ms": 20.0771999952849,
+      "ok": true,
+      "evidence": true,
+      "workspace": "finance",
+      "query": "How does Counterparty Review use Exposure Register?"
+    },
+    {
+      "ms": 20.55109999491833,
+      "ok": true,
+      "evidence": true,
+      "workspace": "personal",
+      "query": "How does Knowledge Vault use Knowledge Graph?"
+    },
+    {
+      "ms": 13.425900018773973,
+      "ok": true,
+      "evidence": true,
+      "workspace": "engineering",
+      "query": "How does Incident Response use Reliability Runbook?"
+    },
+    {
+      "ms": 11.826800007838756,
+      "ok": true,
+      "evidence": true,
+      "workspace": "course",
+      "query": "How does Particle Swarm Optimization tune Ranking Weights?"
+    }
+  ]
+}

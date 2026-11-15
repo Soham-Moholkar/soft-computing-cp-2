@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: softgraph-intelligence
+    runtime: docker
+    plan: 1c-2g
+    numInstances: 1
+    autoDeployTrigger: "off"
+    healthCheckPath: /api/backend/ready
+    disk:
+      name: softgraph-workspaces
+      mountPath: /var/data
+      sizeGB: 2
+    envVars:
+      - key: SOFTGRAPH_USERS
+        sync: false
+      - key: SOFTGRAPH_SESSION_SECRET
+        generateValue: true

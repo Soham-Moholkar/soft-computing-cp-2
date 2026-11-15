@@ -1,0 +1,8 @@
+.local
+__pycache__
+**/__pycache__
+.pytest_cache
+evaluation/raw
+evaluation/runs/*/environment-requirements.txt
+.env*
+tests

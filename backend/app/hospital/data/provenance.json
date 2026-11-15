@@ -1,0 +1,24 @@
+{
+  "retrieved_utc_date": "2026-11-14",
+  "license": "Creative Commons Attribution 4.0 International",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "modifications": "Only the named processed source file was extracted from each official UCI ZIP. Raw file bytes are unchanged. Training derives binary labels and one-hot/scaled features as documented in the model artifacts; these derived artifacts are educational adaptations.",
+  "files": [
+    {
+      "file": "processed.cleveland.data",
+      "bytes": 18461,
+      "sha256": "a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8",
+      "source": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+      "download": "https://archive.ics.uci.edu/static/public/45/heart+disease.zip",
+      "attribution": "Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). Heart Disease [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X."
+    },
+    {
+      "file": "heart_failure_clinical_records_dataset.csv",
+      "bytes": 12239,
+      "sha256": "9c73cea7468ff5d517801ec050fe9993da5912fce4b56f296f8df3b38dd75912",
+      "source": "https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records",
+      "download": "https://archive.ics.uci.edu/static/public/519/heart+failure+clinical+records.zip",
+      "attribution": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R. Source described by Davide Chicco and Giuseppe Jurman (2020), BMC Medical Informatics and Decision Making 20, 16, https://doi.org/10.1186/s12911-020-1023-5."
+    }
+  ]
+}

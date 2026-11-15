@@ -1,0 +1,57 @@
+{
+  "accepted": false,
+  "candidate_checksum": "5a0173e0b1d7de5b1f838b91fdaf1b3164ff20d601f41756c53410720a73ca92",
+  "policy": {
+    "version": "course-production-gate-1",
+    "domain": "soft-computing-course",
+    "min_families": 5,
+    "min_answerable": 30,
+    "min_no_answer": 20,
+    "min_ndcg_gain": 0.01,
+    "min_answerability": 0.9,
+    "max_false_evidence_rate": 0.05,
+    "max_p95_ms": 150
+  },
+  "reasons": [
+    "Candidate training domain does not match the production course domain",
+    "Missing frozen test baseline/candidate comparison",
+    "validation annotations/adaptation have not been independently reviewed",
+    "validation evaluation domain is not the production course domain",
+    "validation gate failed: answerability_accuracy=0.21875, min=0.9",
+    "validation gate failed: false_evidence_rate_on_no_answer=None, max=0.05",
+    "validation gate failed: no_answer_queries=0, min=20",
+    "validation paired family-cluster NDCG gain is not established",
+    "validation relevant non-abstaining response coverage is below target",
+    "Dataset manifest does not provide matching, independently reviewed course-domain evidence"
+  ],
+  "paired_ndcg_comparisons": {
+    "validation": {
+      "n": 96,
+      "families": 8,
+      "mean": 0.0,
+      "bootstrap_95_ci": [
+        0.0,
+        0.0
+      ],
+      "method": "source-family cluster bootstrap; query-weighted mean",
+      "samples": 2000,
+      "ci_status": "estimated"
+    }
+  },
+  "report_digests": {
+    "validation": {
+      "baseline": "701b6ee8c499f1e83fc47ad3b49b3b37f5dd865ebe854f02e8411c8b21c59281",
+      "candidate": "4bc8b50dba70460f0941d403ec2cf642e0d1c6f3a7c718e186b04a08e527fd67"
+    }
+  },
+  "reports": {
+    "validation": {
+      "baseline": "4ccb56f62ff372b3fa57d6541267a8f012f29af9ee556089e032c55996154843",
+      "candidate": "4ccb56f62ff372b3fa57d6541267a8f012f29af9ee556089e032c55996154843"
+    },
+    "test": {
+      "baseline": null,
+      "candidate": null
+    }
+  }
+}

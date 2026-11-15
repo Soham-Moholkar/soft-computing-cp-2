@@ -1,0 +1,878 @@
+{
+  "schema_version": "1",
+  "version": "synthetic-course-v2-hard-queries",
+  "provenance": "Original authored synthetic fixtures for tooling validation. Gold labels are provisional and independent of extractor outputs; human review is pending. Version 2 adds authored paraphrases and adversarial questions; source texts and provisional gold spans are preserved. Cross-split shared factual sentences are explicitly reported for review.",
+  "review_status": "unreviewed_synthetic",
+  "reviewers": [],
+  "seed": 1729,
+  "sources": [
+    {
+      "id": "train-swarm",
+      "family": "swarm-introduction",
+      "split": "train",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "PSO improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph. This example describes weight search.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 3,
+          "canonical_name": "Particle Swarm Optimization"
+        },
+        {
+          "start": 13,
+          "end": 29,
+          "canonical_name": "Hybrid Retrieval"
+        },
+        {
+          "start": 31,
+          "end": 47,
+          "canonical_name": "Hybrid Retrieval"
+        },
+        {
+          "start": 53,
+          "end": 68,
+          "canonical_name": "Knowledge Graph"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Particle Swarm Optimization",
+          "predicate": "improves",
+          "target": "Hybrid Retrieval"
+        },
+        {
+          "source": "Hybrid Retrieval",
+          "predicate": "uses",
+          "target": "Knowledge Graph"
+        }
+      ]
+    },
+    {
+      "id": "train-ant",
+      "family": "ant-paths",
+      "split": "train",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Ant Colony Optimization explores Graph Paths. Pheromone trails guide this authored traversal example.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 23,
+          "canonical_name": "Ant Colony Optimization"
+        },
+        {
+          "start": 33,
+          "end": 44,
+          "canonical_name": "Graph Paths"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ant Colony Optimization",
+          "predicate": "explores",
+          "target": "Graph Paths"
+        }
+      ]
+    },
+    {
+      "id": "train-fuzzy",
+      "family": "fuzzy-support",
+      "split": "train",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Fuzzy Logic supports Retrieval Relevance. Membership Function represents a degree of membership rather than a binary decision.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 11,
+          "canonical_name": "Fuzzy Logic"
+        },
+        {
+          "start": 21,
+          "end": 40,
+          "canonical_name": "Retrieval Relevance"
+        },
+        {
+          "start": 42,
+          "end": 61,
+          "canonical_name": "Membership Function"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fuzzy Logic",
+          "predicate": "supports",
+          "target": "Retrieval Relevance"
+        }
+      ]
+    },
+    {
+      "id": "train-wolf",
+      "family": "wolf-negation",
+      "split": "train",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "GWO does not use Genetic Algorithm. The methods are discussed here as separate approaches.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 3,
+          "canonical_name": "Grey Wolf Optimization"
+        },
+        {
+          "start": 17,
+          "end": 34,
+          "canonical_name": "Genetic Algorithm"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "train-novel",
+      "family": "novel-search",
+      "split": "train",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Differential Evolution is an optimization technique. It is outside the current course ontology.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 22,
+          "canonical_name": "Differential Evolution"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "val-genetic",
+      "family": "genetic-chain",
+      "split": "validation",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Genetic Algorithm improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph. Candidate configurations are compared before selection.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 17,
+          "canonical_name": "Genetic Algorithm"
+        },
+        {
+          "start": 27,
+          "end": 43,
+          "canonical_name": "Hybrid Retrieval"
+        },
+        {
+          "start": 45,
+          "end": 61,
+          "canonical_name": "Hybrid Retrieval"
+        },
+        {
+          "start": 67,
+          "end": 82,
+          "canonical_name": "Knowledge Graph"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Genetic Algorithm",
+          "predicate": "improves",
+          "target": "Hybrid Retrieval"
+        },
+        {
+          "source": "Hybrid Retrieval",
+          "predicate": "uses",
+          "target": "Knowledge Graph"
+        }
+      ]
+    },
+    {
+      "id": "val-controller",
+      "family": "controller-rules",
+      "split": "validation",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Mamdani uses Membership Function. Fuzzy Logic supports Hybrid Retrieval. Rule firing is inspectable in this controller sketch.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 7,
+          "canonical_name": "Mamdani"
+        },
+        {
+          "start": 13,
+          "end": 32,
+          "canonical_name": "Membership Function"
+        },
+        {
+          "start": 34,
+          "end": 45,
+          "canonical_name": "Fuzzy Logic"
+        },
+        {
+          "start": 55,
+          "end": 71,
+          "canonical_name": "Hybrid Retrieval"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Mamdani",
+          "predicate": "uses",
+          "target": "Membership Function"
+        },
+        {
+          "source": "Fuzzy Logic",
+          "predicate": "supports",
+          "target": "Hybrid Retrieval"
+        }
+      ]
+    },
+    {
+      "id": "val-pso-negation",
+      "family": "pso-negative-association",
+      "split": "validation",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "PSO does not improve Entity Resolution. Particle Swarm Optimization is mentioned without an accepted positive relation.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 3,
+          "canonical_name": "Particle Swarm Optimization"
+        },
+        {
+          "start": 21,
+          "end": 38,
+          "canonical_name": "Entity Resolution"
+        },
+        {
+          "start": 40,
+          "end": 67,
+          "canonical_name": "Particle Swarm Optimization"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "val-whale",
+      "family": "whale-parameters",
+      "split": "validation",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "WOA tunes Retrieval Parameters. This whale example concerns parameter search rather than document ingestion.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 3,
+          "canonical_name": "Whale Optimization Algorithm"
+        },
+        {
+          "start": 10,
+          "end": 30,
+          "canonical_name": "Retrieval Parameters"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Whale Optimization Algorithm",
+          "predicate": "tunes",
+          "target": "Retrieval Parameters"
+        }
+      ]
+    },
+    {
+      "id": "val-missing-concept",
+      "family": "unmodeled-algorithm",
+      "split": "validation",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Simulated Annealing supports Hybrid Retrieval. The named search method is not present in the fixed extraction catalog.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 19,
+          "canonical_name": "Simulated Annealing"
+        },
+        {
+          "start": 29,
+          "end": 45,
+          "canonical_name": "Hybrid Retrieval"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Simulated Annealing",
+          "predicate": "supports",
+          "target": "Hybrid Retrieval"
+        }
+      ]
+    },
+    {
+      "id": "test-neuro",
+      "family": "neuro-final",
+      "split": "test",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Neuro-Fuzzy uses Sugeno. This authored illustration joins a learning method to an inference scheme.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 11,
+          "canonical_name": "Neuro-Fuzzy"
+        },
+        {
+          "start": 17,
+          "end": 23,
+          "canonical_name": "Sugeno"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Neuro-Fuzzy",
+          "predicate": "uses",
+          "target": "Sugeno"
+        }
+      ]
+    },
+    {
+      "id": "test-linking",
+      "family": "linking-final",
+      "split": "test",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Entity Resolution supports Knowledge Graph. Entity Extraction creates Knowledge Graph. The two steps have distinct responsibilities.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 17,
+          "canonical_name": "Entity Resolution"
+        },
+        {
+          "start": 27,
+          "end": 42,
+          "canonical_name": "Knowledge Graph"
+        },
+        {
+          "start": 44,
+          "end": 61,
+          "canonical_name": "Entity Extraction"
+        },
+        {
+          "start": 70,
+          "end": 85,
+          "canonical_name": "Knowledge Graph"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Entity Resolution",
+          "predicate": "supports",
+          "target": "Knowledge Graph"
+        },
+        {
+          "source": "Entity Extraction",
+          "predicate": "creates",
+          "target": "Knowledge Graph"
+        }
+      ]
+    },
+    {
+      "id": "test-wolf",
+      "family": "wolf-final",
+      "split": "test",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "Grey Wolf Optimization tunes Ranking Weights. Swarm Intelligence includes Grey Wolf Optimization in this example.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 22,
+          "canonical_name": "Grey Wolf Optimization"
+        },
+        {
+          "start": 29,
+          "end": 44,
+          "canonical_name": "Ranking Weights"
+        },
+        {
+          "start": 46,
+          "end": 64,
+          "canonical_name": "Swarm Intelligence"
+        },
+        {
+          "start": 74,
+          "end": 96,
+          "canonical_name": "Grey Wolf Optimization"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Grey Wolf Optimization",
+          "predicate": "tunes",
+          "target": "Ranking Weights"
+        },
+        {
+          "source": "Swarm Intelligence",
+          "predicate": "includes",
+          "target": "Grey Wolf Optimization"
+        }
+      ]
+    },
+    {
+      "id": "test-negative",
+      "family": "ant-negative-final",
+      "split": "test",
+      "license": "Original synthetic evaluation text authored for this project; no third-party corpus used.",
+      "text": "ACO does not support Source Reliability. No reliability measurement is supplied by this negative example.",
+      "mentions": [
+        {
+          "start": 0,
+          "end": 3,
+          "canonical_name": "Ant Colony Optimization"
+        },
+        {
+          "start": 21,
+          "end": 39,
+          "canonical_name": "Source Reliability"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "queries": [
+    {
+      "id": "train-q1",
+      "split": "train",
+      "text": "What does PSO improve?",
+      "category": "alias",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-swarm",
+          "excerpt": "PSO improves Hybrid Retrieval.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-q2",
+      "split": "train",
+      "text": "How is PSO related to Knowledge Graph?",
+      "category": "multi_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-swarm",
+          "excerpt": "PSO improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-q3",
+      "split": "train",
+      "text": "What does Ant Colony Optimization explore?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-ant",
+          "excerpt": "Ant Colony Optimization explores Graph Paths.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-q4",
+      "split": "train",
+      "text": "Does GWO use Genetic Algorithm?",
+      "category": "negation",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-wolf",
+          "excerpt": "GWO does not use Genetic Algorithm.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-q5",
+      "split": "train",
+      "text": "What does Fuzzy Logic support?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-fuzzy",
+          "excerpt": "Fuzzy Logic supports Retrieval Relevance.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-q6",
+      "split": "train",
+      "text": "What year was Ant Colony Optimization invented?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "train-q7",
+      "split": "train",
+      "text": "How is GWO related to Knowledge Graph?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-q1",
+      "split": "validation",
+      "text": "What does Genetic Algorithm improve?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-genetic",
+          "excerpt": "Genetic Algorithm improves Hybrid Retrieval.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-q2",
+      "split": "validation",
+      "text": "How is Genetic Algorithm related to Knowledge Graph?",
+      "category": "multi_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-genetic",
+          "excerpt": "Genetic Algorithm improves Hybrid Retrieval. Hybrid Retrieval uses Knowledge Graph.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-q3",
+      "split": "validation",
+      "text": "What does Mamdani use?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-controller",
+          "excerpt": "Mamdani uses Membership Function.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-q4",
+      "split": "validation",
+      "text": "Does PSO improve Entity Resolution?",
+      "category": "negation",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-pso-negation",
+          "excerpt": "PSO does not improve Entity Resolution.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-q5",
+      "split": "validation",
+      "text": "What does Whale Optimization Algorithm tune?",
+      "category": "alias",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-whale",
+          "excerpt": "WOA tunes Retrieval Parameters.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-q6",
+      "split": "validation",
+      "text": "What year was Genetic Algorithm invented?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-q7",
+      "split": "validation",
+      "text": "How is WOA related to Mamdani?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-q8",
+      "split": "validation",
+      "text": "What is the tuition price of Hybrid Retrieval?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-q9",
+      "split": "validation",
+      "text": "Hybrid Retrieval",
+      "category": "ambiguous",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-genetic",
+          "excerpt": "Hybrid Retrieval uses Knowledge Graph.",
+          "grade": 2
+        },
+        {
+          "source_id": "val-controller",
+          "excerpt": "Fuzzy Logic supports Hybrid Retrieval.",
+          "grade": 1
+        },
+        {
+          "source_id": "val-missing-concept",
+          "excerpt": "Simulated Annealing supports Hybrid Retrieval.",
+          "grade": 1
+        }
+      ]
+    },
+    {
+      "id": "val-q10",
+      "split": "validation",
+      "text": "What does Simulated Annealing support?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-missing-concept",
+          "excerpt": "Simulated Annealing supports Hybrid Retrieval.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "test-q1",
+      "split": "test",
+      "text": "What does Neuro-Fuzzy use?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "test-neuro",
+          "excerpt": "Neuro-Fuzzy uses Sugeno.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "test-q2",
+      "split": "test",
+      "text": "What does Entity Resolution support?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "test-linking",
+          "excerpt": "Entity Resolution supports Knowledge Graph.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "test-q3",
+      "split": "test",
+      "text": "What does GWO tune?",
+      "category": "alias",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "test-wolf",
+          "excerpt": "Grey Wolf Optimization tunes Ranking Weights.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "test-q4",
+      "split": "test",
+      "text": "Does ACO support Source Reliability?",
+      "category": "negation",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "test-negative",
+          "excerpt": "ACO does not support Source Reliability.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "test-q5",
+      "split": "test",
+      "text": "What year was Neuro-Fuzzy invented?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "test-q6",
+      "split": "test",
+      "text": "How is ACO related to Sugeno?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "train-paraphrase1",
+      "split": "train",
+      "family": "swarm-introduction",
+      "text": "Which swarm method improves the hybrid search process?",
+      "category": "alias",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-swarm",
+          "excerpt": "PSO improves Hybrid Retrieval.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-paraphrase2",
+      "split": "train",
+      "family": "ant-paths",
+      "text": "What guides route exploration in the ant-based algorithm?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-ant",
+          "excerpt": "Ant Colony Optimization explores Graph Paths.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-paraphrase3",
+      "split": "train",
+      "family": "wolf-negation",
+      "text": "Do grey wolves depend on genetic search in this account?",
+      "category": "negation",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "train-wolf",
+          "excerpt": "GWO does not use Genetic Algorithm.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "train-adversarial",
+      "split": "train",
+      "family": "unanswerable-train",
+      "text": "What mathematical proof guarantees PSO always finds the global optimum?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-paraphrase1",
+      "split": "validation",
+      "family": "genetic-chain",
+      "text": "Which search process makes hybrid evidence retrieval better?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-genetic",
+          "excerpt": "Genetic Algorithm improves Hybrid Retrieval.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-paraphrase2",
+      "split": "validation",
+      "family": "controller-rules",
+      "text": "Which curve representation is used by Mamdani inference?",
+      "category": "alias",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-controller",
+          "excerpt": "Mamdani uses Membership Function.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-paraphrase3",
+      "split": "validation",
+      "family": "pso-negative-association",
+      "text": "Is entity linking improved by particle swarms according to the source?",
+      "category": "negation",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-pso-negation",
+          "excerpt": "PSO does not improve Entity Resolution.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-paraphrase4",
+      "split": "validation",
+      "family": "whale-parameters",
+      "text": "Which optimizer adjusts the retrieval configuration?",
+      "category": "alias",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-whale",
+          "excerpt": "WOA tunes Retrieval Parameters.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-paraphrase5",
+      "split": "validation",
+      "family": "unmodeled-algorithm",
+      "text": "Which unfamiliar annealing method assists hybrid search?",
+      "category": "single_hop",
+      "answerable": true,
+      "judgments": [
+        {
+          "source_id": "val-missing-concept",
+          "excerpt": "Simulated Annealing supports Hybrid Retrieval.",
+          "grade": 2
+        }
+      ]
+    },
+    {
+      "id": "val-adversarial1",
+      "split": "validation",
+      "family": "unanswerable-validation",
+      "text": "What makes Genetic Algorithm guaranteed to find a global optimum?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-adversarial2",
+      "split": "validation",
+      "family": "unanswerable-validation",
+      "text": "How many milliseconds does Mamdani inference take on an edge device?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    },
+    {
+      "id": "val-adversarial3",
+      "split": "validation",
+      "family": "unanswerable-validation",
+      "text": "Which randomized experiment proves WOA beats all other optimizers?",
+      "category": "no_answer",
+      "answerable": false,
+      "judgments": []
+    }
+  ]
+}

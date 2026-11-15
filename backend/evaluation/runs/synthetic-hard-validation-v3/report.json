@@ -1,0 +1,3605 @@
+{
+  "report_schema": "2",
+  "dataset_version": "synthetic-course-v2-hard-queries",
+  "dataset_sha256": "4ac9e4b0cd6996c04e7e1a68990c3ff05d6cbe1c9ee063a042d683d4385455c8",
+  "dataset_provenance": "Original authored synthetic fixtures for tooling validation. Gold labels are provisional and independent of extractor outputs; human review is pending. Version 2 adds authored paraphrases and adversarial questions; source texts and provisional gold spans are preserved. Cross-split shared factual sentences are explicitly reported for review.",
+  "reviewers": [],
+  "review_status": "unreviewed_synthetic",
+  "split": "validation",
+  "test_unlocked": false,
+  "domain": "soft-computing-course",
+  "adaptation_reviewed": false,
+  "leakage_audit": {
+    "method": "casefolded word 5-shingles; Jaccard>=0.8 or containment>=0.9 with >=8 shingles",
+    "near_duplicate_sources": [],
+    "shared_cross_split_facts": [
+      {
+        "left": "train-swarm",
+        "right": "val-genetic",
+        "shared_sentences": [
+          "hybrid retrieval uses knowledge graph"
+        ]
+      }
+    ],
+    "family_counts": {
+      "train": 5,
+      "validation": 5,
+      "test": 4
+    },
+    "limitations": "Lexical audit cannot establish absence of semantic leakage. Shared facts require review but are not automatically the same source family."
+  },
+  "ranker_sha256": null,
+  "feature_version": null,
+  "latency_protocol": {
+    "mode_order": "seeded shuffled (mode, query) schedule",
+    "warm_repeats_per_query": 3,
+    "cold_index_build_ms": 1.2980000174138695,
+    "reported_percentiles": "all repeated in-process API requests; includes snapshot writes"
+  },
+  "seed": 1729,
+  "top_k": 3,
+  "modes": [
+    "lexical",
+    "graph",
+    "fuzzy",
+    "hybrid"
+  ],
+  "source_count": 5,
+  "environment": {
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "dependencies": {
+      "fastapi": "0.135.2",
+      "pydantic": "2.12.5",
+      "httpx": "0.28.1",
+      "pypdf": "6.7.5",
+      "uvicorn": "0.42.0",
+      "python-multipart": "0.0.27"
+    }
+  },
+  "installed_environment": {
+    "CacheControl": "0.14.3",
+    "Cython": "3.1.4",
+    "Deprecated": "1.3.1",
+    "GitPython": "3.1.45",
+    "Jinja2": "3.1.6",
+    "Mako": "1.3.10",
+    "MarkupSafe": "3.0.3",
+    "PyJWT": "2.10.1",
+    "PyMuPDF": "1.27.2.2",
+    "PyNaCl": "1.6.2",
+    "PyQt6": "6.10.0",
+    "PyQt6-Qt6": "6.10.0",
+    "PyQt6_sip": "13.10.2",
+    "PySide6": "6.7.2",
+    "PySide6_Addons": "6.7.2",
+    "PySide6_Essentials": "6.7.2",
+    "PyYAML": "6.0.1",
+    "Pygments": "2.19.2",
+    "QtPy": "2.4.3",
+    "RapidFuzz": "3.14.1",
+    "SQLAlchemy": "2.0.48",
+    "Send2Trash": "1.8.3",
+    "TA-Lib": "0.6.7",
+    "aiofiles": "23.2.1",
+    "aiohappyeyeballs": "2.6.1",
+    "aiohttp": "3.9.1",
+    "aiosignal": "1.4.0",
+    "aiosqlite": "0.22.1",
+    "alembic": "1.18.4",
+    "algokit-utils": "2.4.0",
+    "altair": "5.5.0",
+    "annotated-doc": "0.0.3",
+    "annotated-types": "0.7.0",
+    "anthropic": "0.84.0",
+    "anyio": "3.7.1",
+    "appdirs": "1.4.4",
+    "archfolio-api": "0.1.0",
+    "argcomplete": "3.6.3",
+    "argon2-cffi": "25.1.0",
+    "argon2-cffi-bindings": "25.1.0",
+    "arrow": "1.3.0",
+    "asgiref": "3.11.1",
+    "asttokens": "3.0.0",
+    "async-lru": "2.0.5",
+    "asyncpg": "0.30.0",
+    "attrs": "25.3.0",
+    "babel": "2.17.0",
+    "bcrypt": "4.0.1",
+    "beautifulsoup4": "4.12.2",
+    "bhavviz": "0.1.0",
+    "black": "25.9.0",
+    "bleach": "6.2.0",
+    "blinker": "1.9.0",
+    "build": "1.3.0",
+    "cachetools": "6.2.0",
+    "certifi": "2026.1.4",
+    "cffi": "2.0.0",
+    "charset-normalizer": "3.4.3",
+    "cleo": "2.1.0",
+    "click": "8.3.0",
+    "cloudpickle": "3.1.1",
+    "cmdstanpy": "1.3.0",
+    "colorama": "0.4.6",
+    "coloredlogs": "15.0.1",
+    "colorlog": "6.9.0",
+    "comm": "0.2.3",
+    "contourpy": "1.3.3",
+    "coverage": "7.13.5",
+    "crashtest": "0.4.1",
+    "cryptography": "44.0.0",
+    "curl_cffi": "0.15.0",
+    "cycler": "0.12.1",
+    "debugpy": "1.8.17",
+    "decorator": "5.2.1",
+    "defusedxml": "0.7.1",
+    "distlib": "0.4.0",
+    "distro": "1.9.0",
+    "dnspython": "2.8.0",
+    "docstring_parser": "0.17.0",
+    "duckdb": "1.5.3",
+    "dulwich": "0.24.2",
+    "ecdsa": "0.19.1",
+    "email_validator": "2.2.0",
+    "et_xmlfile": "2.0.0",
+    "executing": "2.2.1",
+    "fakeredis": "2.34.1",
+    "fastapi": "0.135.2",
+    "fastjsonschema": "2.21.2",
+    "feedparser": "6.0.12",
+    "filelock": "3.25.2",
+    "filetype": "1.2.0",
+    "findpython": "0.7.0",
+    "flatbuffers": "25.12.19",
+    "fonttools": "4.60.0",
+    "fqdn": "1.5.1",
+    "frozendict": "2.4.6",
+    "frozenlist": "1.8.0",
+    "fsspec": "2026.2.0",
+    "gitdb": "4.0.12",
+    "google-ai-generativelanguage": "0.6.15",
+    "google-api-core": "2.28.1",
+    "google-api-python-client": "2.187.0",
+    "google-auth": "2.49.0",
+    "google-auth-httplib2": "0.2.1",
+    "google-genai": "1.66.0",
+    "google-generativeai": "0.8.5",
+    "googleapis-common-protos": "1.72.0",
+    "greenlet": "3.2.4",
+    "grpcio": "1.76.0",
+    "grpcio-status": "1.71.2",
+    "h11": "0.16.0",
+    "hiredis": "3.3.0",
+    "holidays": "0.86",
+    "html5lib": "1.1",
+    "httpcore": "1.0.9",
+    "httplib2": "0.31.0",
+    "httptools": "0.7.1",
+    "httpx": "0.28.1",
+    "httpx-sse": "0.4.3",
+    "humanfriendly": "10.0",
+    "idna": "3.11",
+    "imbalanced-learn": "0.14.1",
+    "importlib_metadata": "8.5.0",
+    "importlib_resources": "6.5.2",
+    "iniconfig": "2.1.0",
+    "installer": "0.7.0",
+    "ipykernel": "6.30.1",
+    "ipython": "9.5.0",
+    "ipython_pygments_lexers": "1.1.1",
+    "ipywidgets": "8.1.7",
+    "isoduration": "20.11.0",
+    "isort": "7.0.0",
+    "jaraco.classes": "3.4.0",
+    "jaraco.context": "6.0.1",
+    "jaraco.functools": "4.3.0",
+    "jedi": "0.19.2",
+    "jiter": "0.13.0",
+    "joblib": "1.3.2",
+    "json5": "0.12.1",
+    "jsonpatch": "1.33",
+    "jsonpointer": "3.0.0",
+    "jsonschema": "4.25.1",
+    "jsonschema-specifications": "2025.9.1",
+    "jupyter": "1.0.0",
+    "jupyter-console": "6.6.3",
+    "jupyter-events": "0.12.0",
+    "jupyter-lsp": "2.3.0",
+    "jupyter_client": "8.6.3",
+    "jupyter_core": "5.8.1",
+    "jupyter_server": "2.17.0",
+    "jupyter_server_terminals": "0.5.3",
+    "jupyterlab": "4.4.8",
+    "jupyterlab_pygments": "0.3.0",
+    "jupyterlab_server": "2.27.3",
+    "jupyterlab_widgets": "3.0.15",
+    "kaggle": "2.0.0",
+    "kagglesdk": "0.1.16",
+    "keyring": "25.6.0",
+    "kiwisolver": "1.4.9",
+    "langchain": "1.2.10",
+    "langchain-anthropic": "1.3.4",
+    "langchain-core": "1.2.17",
+    "langchain-google-genai": "4.2.1",
+    "langchain-openai": "1.1.10",
+    "langgraph": "1.0.10",
+    "langgraph-checkpoint": "4.0.1",
+    "langgraph-prebuilt": "1.0.8",
+    "langgraph-sdk": "0.3.9",
+    "langsmith": "0.7.14",
+    "lark": "1.3.0",
+    "lightgbm": "4.6.0",
+    "llvmlite": "0.44.0",
+    "lxml": "4.9.3",
+    "markdown-it-py": "4.0.0",
+    "matplotlib": "3.8.2",
+    "matplotlib-inline": "0.1.7",
+    "mcp": "1.26.0",
+    "mdurl": "0.1.2",
+    "mistune": "3.1.4",
+    "more-itertools": "10.8.0",
+    "mplfinance": "0.12.10b0",
+    "mpmath": "1.3.0",
+    "msgpack": "1.1.2",
+    "multidict": "6.7.0",
+    "multitasking": "0.0.12",
+    "mypy": "1.18.2",
+    "mypy_extensions": "1.1.0",
+    "narwhals": "2.6.0",
+    "nbclient": "0.10.2",
+    "nbconvert": "7.16.6",
+    "nbformat": "5.10.4",
+    "nest-asyncio": "1.6.0",
+    "networkx": "3.6.1",
+    "notebook": "7.4.6",
+    "notebook_shim": "0.2.4",
+    "numba": "0.61.2",
+    "numpy": "1.26.2",
+    "onnxruntime": "1.20.1",
+    "openai": "2.26.0",
+    "opencv-python": "4.13.0.92",
+    "openpyxl": "3.1.5",
+    "opentelemetry-api": "1.29.0",
+    "opentelemetry-instrumentation": "0.50b0",
+    "opentelemetry-instrumentation-asgi": "0.50b0",
+    "opentelemetry-instrumentation-fastapi": "0.50b0",
+    "opentelemetry-sdk": "1.29.0",
+    "opentelemetry-semantic-conventions": "0.50b0",
+    "opentelemetry-util-http": "0.50b0",
+    "optuna": "4.5.0",
+    "orjson": "3.11.7",
+    "ormsgpack": "1.12.2",
+    "packaging": "25.0",
+    "pandas": "2.1.3",
+    "pandas-stubs": "2.3.2.250926",
+    "pandas-ta": "0.4.71b0",
+    "pandera": "0.26.1",
+    "pandocfilters": "1.5.1",
+    "parso": "0.8.5",
+    "passlib": "1.7.4",
+    "pathspec": "0.12.1",
+    "patsy": "1.0.2",
+    "pbs-installer": "2025.9.18",
+    "pdfminer.six": "20251230",
+    "pdfplumber": "0.11.9",
+    "peewee": "3.18.3",
+    "pglast": "7.14",
+    "pillow": "11.3.0",
+    "pip": "25.2",
+    "pipx": "1.8.0",
+    "pkginfo": "1.12.1.2",
+    "platformdirs": "4.4.0",
+    "plotly": "6.3.1",
+    "pluggy": "1.6.0",
+    "poetry": "2.2.1",
+    "poetry-core": "2.2.1",
+    "polars": "1.34.0",
+    "polars-runtime-32": "1.34.0",
+    "prometheus_client": "0.23.1",
+    "prompt_toolkit": "3.0.52",
+    "propcache": "0.4.1",
+    "prophet": "1.1.5",
+    "proto-plus": "1.26.1",
+    "protobuf": "5.29.5",
+    "psutil": "7.1.0",
+    "psycopg": "3.3.3",
+    "psycopg-binary": "3.3.3",
+    "psycopg2-binary": "2.9.10",
+    "pure_eval": "0.2.3",
+    "py-algorand-sdk": "2.11.1",
+    "pyarrow": "16.1.0",
+    "pyasn1": "0.6.1",
+    "pyasn1_modules": "0.4.2",
+    "pycparser": "3.0",
+    "pycryptodomex": "3.23.0",
+    "pydantic": "2.12.5",
+    "pydantic-settings": "2.13.1",
+    "pydantic_core": "2.41.5",
+    "pydeck": "0.9.1",
+    "pyparsing": "3.2.5",
+    "pypdf": "6.7.5",
+    "pypdfium2": "5.5.0",
+    "pyproject_hooks": "1.2.0",
+    "pyreadline3": "3.5.4",
+    "pytesseract": "0.3.13",
+    "pytest": "8.4.2",
+    "pytest-asyncio": "0.26.0",
+    "pytest-cov": "6.3.0",
+    "python-dateutil": "2.8.2",
+    "python-docx": "1.2.0",
+    "python-dotenv": "1.0.1",
+    "python-jose": "3.3.0",
+    "python-json-logger": "3.3.0",
+    "python-multipart": "0.0.27",
+    "python-slugify": "8.0.4",
+    "pytokens": "0.1.10",
+    "pytz": "2025.2",
+    "pywin32": "311",
+    "pywin32-ctypes": "0.2.3",
+    "pywinpty": "3.0.0",
+    "pyzbar": "0.1.9",
+    "pyzmq": "27.1.0",
+    "qtconsole": "5.7.0",
+    "rank-bm25": "0.2.2",
+    "redis": "5.2.1",
+    "referencing": "0.36.2",
+    "regex": "2026.2.28",
+    "reportlab": "4.4.10",
+    "requests": "2.32.3",
+    "requests-toolbelt": "1.0.0",
+    "reusable-auth-backend": "0.1.0",
+    "rfc3339-validator": "0.1.4",
+    "rfc3986": "1.5.0",
+    "rfc3986-validator": "0.1.1",
+    "rfc3987-syntax": "1.1.0",
+    "rich": "14.2.0",
+    "rpds-py": "0.27.1",
+    "rsa": "4.9.1",
+    "ruff": "0.14.0",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.11.4",
+    "seaborn": "0.13.0",
+    "setuptools": "70.2.0",
+    "sgmllib3k": "1.0.0",
+    "shap": "0.48.0",
+    "shellingham": "1.5.4",
+    "shiboken6": "6.7.2",
+    "six": "1.17.0",
+    "sklearn-compat": "0.1.5",
+    "slicer": "0.0.8",
+    "smmap": "5.0.2",
+    "sniffio": "1.3.1",
+    "sortedcontainers": "2.4.0",
+    "soupsieve": "2.8",
+    "sqlmodel": "0.0.38",
+    "squarify": "0.4.4",
+    "sse-starlette": "3.3.2",
+    "stack-data": "0.6.3",
+    "stanio": "0.5.1",
+    "starlette": "1.0.0",
+    "statsmodels": "0.14.6",
+    "streamlit": "1.50.0",
+    "structlog": "24.4.0",
+    "sympy": "1.14.0",
+    "tenacity": "9.0.0",
+    "terminado": "0.18.1",
+    "text-unidecode": "1.3",
+    "threadpoolctl": "3.6.0",
+    "tiktoken": "0.12.0",
+    "tinycss2": "1.4.0",
+    "tokenize_rt": "6.2.0",
+    "toml": "0.10.2",
+    "tomlkit": "0.13.3",
+    "torch": "2.11.0+cu130",
+    "torchaudio": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "tornado": "6.5.2",
+    "tqdm": "4.67.1",
+    "traitlets": "5.14.3",
+    "trove-classifiers": "2025.9.11.17",
+    "typeguard": "4.4.4",
+    "typer": "0.19.2",
+    "types-python-dateutil": "2.9.0.20250822",
+    "types-pytz": "2025.2.0.20250809",
+    "types-requests": "2.33.0.20260518",
+    "typing-inspect": "0.9.0",
+    "typing-inspection": "0.4.2",
+    "typing_extensions": "4.15.0",
+    "tzdata": "2025.2",
+    "uri-template": "1.3.0",
+    "uritemplate": "4.2.0",
+    "urllib3": "2.5.0",
+    "userpath": "1.9.2",
+    "uuid_utils": "0.14.1",
+    "uvicorn": "0.42.0",
+    "vaderSentiment": "3.3.2",
+    "virtualenv": "20.34.0",
+    "watchdog": "6.0.0",
+    "watchfiles": "1.1.1",
+    "wcwidth": "0.2.14",
+    "webcolors": "24.11.1",
+    "webencodings": "0.5.1",
+    "websocket-client": "1.8.0",
+    "websockets": "15.0.1",
+    "widgetsnbextension": "4.0.14",
+    "wrapt": "2.1.1",
+    "xgboost": "3.0.5",
+    "xxhash": "3.6.0",
+    "yarl": "1.22.0",
+    "yfinance": "1.2.1",
+    "zipp": "3.23.0",
+    "zstandard": "0.25.0"
+  },
+  "code_sha256": "4ccb56f62ff372b3fa57d6541267a8f012f29af9ee556089e032c55996154843",
+  "backend_versions": {
+    "schema_version": "1.0",
+    "graph_version": "graph-sqlite-5",
+    "index_version": "bm25-2a5de97b09b461b52749c61c",
+    "configuration_version": "retrieval-bm25-1",
+    "code": "ok",
+    "message": "SoftGraph backend is healthy",
+    "request_id": "local-request",
+    "status": "healthy",
+    "services": {
+      "graph_repository": "healthy",
+      "ingestion_repository": "healthy",
+      "ranking_artifact": "baseline"
+    }
+  },
+  "extraction": {
+    "mentions": {
+      "tp": 14,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.9333333333333333,
+      "recall": 0.9333333333333333,
+      "f1": 0.9333333333333333
+    },
+    "relations": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "f1": 0.9090909090909091
+    },
+    "end_to_end_resolution_accuracy": 0.9333333333333333,
+    "gold_mentions": 15,
+    "missing_mentions": [
+      [
+        "val-missing-concept",
+        0,
+        19,
+        "Simulated Annealing"
+      ]
+    ],
+    "unexpected_mentions": [
+      [
+        "val-missing-concept",
+        99,
+        109,
+        "Entity Extraction"
+      ]
+    ],
+    "missing_relations": [
+      [
+        "val-missing-concept",
+        "Simulated Annealing",
+        "supports",
+        "Hybrid Retrieval"
+      ]
+    ],
+    "unexpected_relations": []
+  },
+  "summary": {
+    "lexical": {
+      "queries": 18,
+      "answerable_queries": 12,
+      "no_answer_queries": 6,
+      "answerability_accuracy": 0.7222222222222222,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 0.9166666666666666,
+      "answerable_response_with_relevant_evidence_rate": 0.5833333333333334,
+      "citation_integrity": 1.0,
+      "cited_queries": 18,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 6.565249990671873,
+      "latency_p95_ms": 64.97119999839892,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.3611111111111111,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.9166666666666666,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.8611111111111112,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.875,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 3,
+          "answerability_accuracy": 0.3333333333333333
+        },
+        "ambiguous": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "no_answer": {
+          "n": 6,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 5,
+          "answerability_accuracy": 0.6
+        }
+      }
+    },
+    "graph": {
+      "queries": 18,
+      "answerable_queries": 12,
+      "no_answer_queries": 6,
+      "answerability_accuracy": 0.6666666666666666,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 0.9166666666666666,
+      "answerable_response_with_relevant_evidence_rate": 0.5,
+      "citation_integrity": 1.0,
+      "cited_queries": 18,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 6.149149994598702,
+      "latency_p95_ms": 7.937949994811788,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.3611111111111111,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.9166666666666666,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.8611111111111112,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.875,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 3,
+          "answerability_accuracy": 0.3333333333333333
+        },
+        "ambiguous": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.0
+        },
+        "no_answer": {
+          "n": 6,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 5,
+          "answerability_accuracy": 0.6
+        }
+      }
+    },
+    "fuzzy": {
+      "queries": 18,
+      "answerable_queries": 12,
+      "no_answer_queries": 6,
+      "answerability_accuracy": 0.7222222222222222,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 0.9166666666666666,
+      "answerable_response_with_relevant_evidence_rate": 0.5833333333333334,
+      "citation_integrity": 1.0,
+      "cited_queries": 18,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 6.262949988013133,
+      "latency_p95_ms": 7.750979988486503,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.3611111111111111,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.9166666666666666,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.8611111111111112,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.875,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 3,
+          "answerability_accuracy": 0.3333333333333333
+        },
+        "ambiguous": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "no_answer": {
+          "n": 6,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 5,
+          "answerability_accuracy": 0.6
+        }
+      }
+    },
+    "hybrid": {
+      "queries": 18,
+      "answerable_queries": 12,
+      "no_answer_queries": 6,
+      "answerability_accuracy": 0.7222222222222222,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 0.9166666666666666,
+      "answerable_response_with_relevant_evidence_rate": 0.5833333333333334,
+      "citation_integrity": 1.0,
+      "cited_queries": 18,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 6.121500002336688,
+      "latency_p95_ms": 7.537709989992433,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.3611111111111111,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.9166666666666666,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.8611111111111112,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 12,
+          "families": 3,
+          "mean": 0.875,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 3,
+          "answerability_accuracy": 0.3333333333333333
+        },
+        "ambiguous": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "no_answer": {
+          "n": 6,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 5,
+          "answerability_accuracy": 0.6
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "query_id": "val-adversarial1",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.018000014591962,
+      "latency_samples_ms": [
+        6.2920999771449715,
+        6.018000014591962,
+        5.979399982606992
+      ],
+      "initial_request_ms": 6.462000019382685
+    },
+    {
+      "query_id": "val-adversarial2",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.424699997296557,
+      "latency_samples_ms": [
+        6.258599983993918,
+        6.424699997296557,
+        7.59319998905994
+      ],
+      "initial_request_ms": 5.441799992695451
+    },
+    {
+      "query_id": "val-adversarial3",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 7.137599983252585,
+      "latency_samples_ms": [
+        7.137599983252585,
+        7.222299987915903,
+        5.897399998502806
+      ],
+      "initial_request_ms": 7.1595000044908375
+    },
+    {
+      "query_id": "val-paraphrase1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-whale",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.5
+      },
+      "latency_ms": 7.220800005597994,
+      "latency_samples_ms": [
+        8.269700017990544,
+        7.220800005597994,
+        6.359000020893291
+      ],
+      "initial_request_ms": 5.929200007813051
+    },
+    {
+      "query_id": "val-paraphrase2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "alias",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.219200004125014,
+      "latency_samples_ms": [
+        5.790199997136369,
+        6.473499990534037,
+        6.219200004125014
+      ],
+      "initial_request_ms": 5.8317999937571585
+    },
+    {
+      "query_id": "val-paraphrase3",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.079300015699118,
+      "latency_samples_ms": [
+        6.430100009310991,
+        6.079300015699118,
+        5.9182999830227345
+      ],
+      "initial_request_ms": 6.97980000404641
+    },
+    {
+      "query_id": "val-paraphrase4",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "f1_at_k": 0,
+        "mrr_at_k": 0,
+        "ndcg_at_k": 0.0
+      },
+      "latency_ms": 6.779599993024021,
+      "latency_samples_ms": [
+        6.01379998261109,
+        6.911800010129809,
+        6.779599993024021
+      ],
+      "initial_request_ms": 5.368300015106797
+    },
+    {
+      "query_id": "val-paraphrase5",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-genetic",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.59899999643676,
+      "latency_samples_ms": [
+        5.59899999643676,
+        5.566900013945997,
+        6.320299988146871
+      ],
+      "initial_request_ms": 6.092700001318008
+    },
+    {
+      "query_id": "val-q1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.086900015361607,
+      "latency_samples_ms": [
+        6.703999999444932,
+        6.063699984224513,
+        6.086900015361607
+      ],
+      "initial_request_ms": 8.757400006288663
+    },
+    {
+      "query_id": "val-q10",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.031700002495199,
+      "latency_samples_ms": [
+        6.031700002495199,
+        6.833599996753037,
+        5.541899998206645
+      ],
+      "initial_request_ms": 7.333400018978864
+    },
+    {
+      "query_id": "val-q2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "multi_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.561799993505701,
+      "latency_samples_ms": [
+        6.561799993505701,
+        8.25849999091588,
+        5.925800011027604
+      ],
+      "initial_request_ms": 6.35609999881126
+    },
+    {
+      "query_id": "val-q3",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 7.258900004671887,
+      "latency_samples_ms": [
+        5.84349999553524,
+        8.043999987421557,
+        7.258900004671887
+      ],
+      "initial_request_ms": 6.482099997811019
+    },
+    {
+      "query_id": "val-q4",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.514899985631928,
+      "latency_samples_ms": [
+        5.677300010574982,
+        6.993599992711097,
+        6.514899985631928
+      ],
+      "initial_request_ms": 5.888699990464374
+    },
+    {
+      "query_id": "val-q5",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.777700018370524,
+      "latency_samples_ms": [
+        6.267299992032349,
+        5.393700004788116,
+        5.777700018370524
+      ],
+      "initial_request_ms": 6.020800006808713
+    },
+    {
+      "query_id": "val-q6",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.8969999954570085,
+      "latency_samples_ms": [
+        5.8969999954570085,
+        6.9580999843310565,
+        5.632000014884397
+      ],
+      "initial_request_ms": 6.586400006199256
+    },
+    {
+      "query_id": "val-q7",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-controller",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.836800002725795,
+      "latency_samples_ms": [
+        5.7548999902792275,
+        5.836800002725795,
+        6.391400005668402
+      ],
+      "initial_request_ms": 5.858899996383116
+    },
+    {
+      "query_id": "val-q8",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.83320002281107,
+      "latency_samples_ms": [
+        7.19760000356473,
+        5.778800026746467,
+        6.83320002281107
+      ],
+      "initial_request_ms": 6.590800010599196
+    },
+    {
+      "query_id": "val-q9",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "ambiguous",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "f1_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.993400001898408,
+      "latency_samples_ms": [
+        5.993400001898408,
+        5.7690999819897115,
+        6.362300016917288
+      ],
+      "initial_request_ms": 6.331399985356256
+    },
+    {
+      "query_id": "val-adversarial1",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.4425999987870455,
+      "latency_samples_ms": [
+        5.190700001548976,
+        5.4425999987870455,
+        9.377199981827289
+      ],
+      "initial_request_ms": 6.0532999923452735
+    },
+    {
+      "query_id": "val-adversarial2",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.665099994279444,
+      "latency_samples_ms": [
+        7.358599978033453,
+        6.665099994279444,
+        5.512800009455532
+      ],
+      "initial_request_ms": 5.8065000048372895
+    },
+    {
+      "query_id": "val-adversarial3",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 7.017600000835955,
+      "latency_samples_ms": [
+        7.35759999952279,
+        6.906299997353926,
+        7.017600000835955
+      ],
+      "initial_request_ms": 6.171099987113848
+    },
+    {
+      "query_id": "val-paraphrase1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-whale",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.5
+      },
+      "latency_ms": 5.861100013135001,
+      "latency_samples_ms": [
+        5.861100013135001,
+        7.2392000001855195,
+        5.83170002209954
+      ],
+      "initial_request_ms": 5.773399985628203
+    },
+    {
+      "query_id": "val-paraphrase2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "alias",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.1997000011615455,
+      "latency_samples_ms": [
+        7.283500017365441,
+        6.1997000011615455,
+        5.848400003742427
+      ],
+      "initial_request_ms": 5.738100007874891
+    },
+    {
+      "query_id": "val-paraphrase3",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.505999986780807,
+      "latency_samples_ms": [
+        5.802900006528944,
+        5.337000009603798,
+        5.505999986780807
+      ],
+      "initial_request_ms": 6.789000006392598
+    },
+    {
+      "query_id": "val-paraphrase4",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "f1_at_k": 0,
+        "mrr_at_k": 0,
+        "ndcg_at_k": 0.0
+      },
+      "latency_ms": 5.882900004507974,
+      "latency_samples_ms": [
+        5.882900004507974,
+        5.936100002145395,
+        5.788199981907383
+      ],
+      "initial_request_ms": 6.955399992875755
+    },
+    {
+      "query_id": "val-paraphrase5",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-genetic",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 7.546499982709065,
+      "latency_samples_ms": [
+        6.452700006775558,
+        8.29410000005737,
+        7.546499982709065
+      ],
+      "initial_request_ms": 5.883499979972839
+    },
+    {
+      "query_id": "val-q1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.583299982594326,
+      "latency_samples_ms": [
+        5.674000014550984,
+        6.583299982594326,
+        7.9375999921467155
+      ],
+      "initial_request_ms": 5.64189997385256
+    },
+    {
+      "query_id": "val-q10",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.322900007944554,
+      "latency_samples_ms": [
+        7.128199998987839,
+        5.777699989266694,
+        6.322900007944554
+      ],
+      "initial_request_ms": 6.089300004532561
+    },
+    {
+      "query_id": "val-q2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "multi_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.885400023544207,
+      "latency_samples_ms": [
+        5.885400023544207,
+        6.608499999856576,
+        5.835100018884987
+      ],
+      "initial_request_ms": 6.638400023803115
+    },
+    {
+      "query_id": "val-q3",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.091899995226413,
+      "latency_samples_ms": [
+        5.629699997371063,
+        6.618800020078197,
+        6.091899995226413
+      ],
+      "initial_request_ms": 5.556199990678579
+    },
+    {
+      "query_id": "val-q4",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.665399996563792,
+      "latency_samples_ms": [
+        6.511100014904514,
+        6.824799987953156,
+        6.665399996563792
+      ],
+      "initial_request_ms": 8.069000003160909
+    },
+    {
+      "query_id": "val-q5",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.172800000058487,
+      "latency_samples_ms": [
+        5.74270001379773,
+        7.488200004445389,
+        6.172800000058487
+      ],
+      "initial_request_ms": 6.936399993719533
+    },
+    {
+      "query_id": "val-q6",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.318200001260266,
+      "latency_samples_ms": [
+        6.051900010788813,
+        6.318200001260266,
+        7.938599999761209
+      ],
+      "initial_request_ms": 5.948000005446374
+    },
+    {
+      "query_id": "val-q7",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-controller",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.830999976955354,
+      "latency_samples_ms": [
+        6.952299998374656,
+        5.906100006541237,
+        6.830999976955354
+      ],
+      "initial_request_ms": 6.669700000202283
+    },
+    {
+      "query_id": "val-q8",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.949100013822317,
+      "latency_samples_ms": [
+        5.949100013822317,
+        5.638000002363697,
+        6.125499989138916
+      ],
+      "initial_request_ms": 6.305900024017319
+    },
+    {
+      "query_id": "val-q9",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "ambiguous",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "f1_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.71450000279583,
+      "latency_samples_ms": [
+        5.651599989505485,
+        5.944100004853681,
+        5.71450000279583
+      ],
+      "initial_request_ms": 6.464700010837987
+    },
+    {
+      "query_id": "val-adversarial1",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 7.010999979684129,
+      "latency_samples_ms": [
+        7.010999979684129,
+        6.77529998938553,
+        7.3071000224445015
+      ],
+      "initial_request_ms": 5.6557000207249075
+    },
+    {
+      "query_id": "val-adversarial2",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.710700002964586,
+      "latency_samples_ms": [
+        5.710700002964586,
+        5.964700016193092,
+        5.272399983368814
+      ],
+      "initial_request_ms": 5.504000000655651
+    },
+    {
+      "query_id": "val-adversarial3",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.848200002219528,
+      "latency_samples_ms": [
+        5.570199980866164,
+        6.127300002845004,
+        5.848200002219528
+      ],
+      "initial_request_ms": 5.889300024136901
+    },
+    {
+      "query_id": "val-paraphrase1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-whale",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.5
+      },
+      "latency_ms": 6.582600006368011,
+      "latency_samples_ms": [
+        7.922599994344637,
+        6.5156999917235225,
+        6.582600006368011
+      ],
+      "initial_request_ms": 5.955300002824515
+    },
+    {
+      "query_id": "val-paraphrase2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "alias",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.728699994506314,
+      "latency_samples_ms": [
+        5.575599992880598,
+        6.329299998469651,
+        5.728699994506314
+      ],
+      "initial_request_ms": 6.377000012435019
+    },
+    {
+      "query_id": "val-paraphrase3",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.618000013986602,
+      "latency_samples_ms": [
+        6.1274000036064535,
+        6.618000013986602,
+        7.804599998053163
+      ],
+      "initial_request_ms": 7.332100009080023
+    },
+    {
+      "query_id": "val-paraphrase4",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "f1_at_k": 0,
+        "mrr_at_k": 0,
+        "ndcg_at_k": 0.0
+      },
+      "latency_ms": 6.085500004701316,
+      "latency_samples_ms": [
+        6.085500004701316,
+        6.29379999008961,
+        5.9046999958809465
+      ],
+      "initial_request_ms": 7.624499994562939
+    },
+    {
+      "query_id": "val-paraphrase5",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-genetic",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.659000016748905,
+      "latency_samples_ms": [
+        5.9635000070557,
+        5.572800000663847,
+        5.659000016748905
+      ],
+      "initial_request_ms": 6.363199994666502
+    },
+    {
+      "query_id": "val-q1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.731899989768863,
+      "latency_samples_ms": [
+        5.731899989768863,
+        5.419599998276681,
+        8.603399997809902
+      ],
+      "initial_request_ms": 5.754000012530014
+    },
+    {
+      "query_id": "val-q10",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.139600009191781,
+      "latency_samples_ms": [
+        6.139600009191781,
+        6.841099995654076,
+        5.788900016341358
+      ],
+      "initial_request_ms": 6.124700012151152
+    },
+    {
+      "query_id": "val-q2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "multi_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.4968999940901995,
+      "latency_samples_ms": [
+        6.029100011801347,
+        6.599199987249449,
+        6.4968999940901995
+      ],
+      "initial_request_ms": 7.505499990656972
+    },
+    {
+      "query_id": "val-q3",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.55009999172762,
+      "latency_samples_ms": [
+        6.55009999172762,
+        5.638700007693842,
+        7.393999985652044
+      ],
+      "initial_request_ms": 5.700999987311661
+    },
+    {
+      "query_id": "val-q4",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.943999993382022,
+      "latency_samples_ms": [
+        7.095899985870346,
+        6.943999993382022,
+        6.211600004462525
+      ],
+      "initial_request_ms": 8.243199990829453
+    },
+    {
+      "query_id": "val-q5",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.698699988191947,
+      "latency_samples_ms": [
+        6.698699988191947,
+        6.720000004861504,
+        6.10120000783354
+      ],
+      "initial_request_ms": 10.574799991445616
+    },
+    {
+      "query_id": "val-q6",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.363199994666502,
+      "latency_samples_ms": [
+        6.97389998822473,
+        6.363199994666502,
+        5.4382999951485544
+      ],
+      "initial_request_ms": 6.5042999922297895
+    },
+    {
+      "query_id": "val-q7",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-controller",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.777199985459447,
+      "latency_samples_ms": [
+        5.913700006203726,
+        5.685600015567616,
+        5.777199985459447
+      ],
+      "initial_request_ms": 7.0035000098869205
+    },
+    {
+      "query_id": "val-q8",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.785200017271563,
+      "latency_samples_ms": [
+        5.785200017271563,
+        6.15599998855032,
+        5.646500008879229
+      ],
+      "initial_request_ms": 5.635900015477091
+    },
+    {
+      "query_id": "val-q9",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "ambiguous",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "f1_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.091899995226413,
+      "latency_samples_ms": [
+        6.1157000018283725,
+        5.673499981639907,
+        6.091899995226413
+      ],
+      "initial_request_ms": 5.95749999047257
+    },
+    {
+      "query_id": "val-adversarial1",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.0013999755028635,
+      "latency_samples_ms": [
+        6.0013999755028635,
+        5.8846000174526125,
+        6.900899985339493
+      ],
+      "initial_request_ms": 5.671200022334233
+    },
+    {
+      "query_id": "val-adversarial2",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.754799989517778,
+      "latency_samples_ms": [
+        8.40079999761656,
+        5.63460000557825,
+        5.754799989517778
+      ],
+      "initial_request_ms": 8.06150000425987
+    },
+    {
+      "query_id": "val-adversarial3",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.613000005017966,
+      "latency_samples_ms": [
+        6.613000005017966,
+        8.962499996414408,
+        6.4187000098172575
+      ],
+      "initial_request_ms": 7.599000004120171
+    },
+    {
+      "query_id": "val-paraphrase1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-whale",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.3333333333333333,
+        "ndcg_at_k": 0.5
+      },
+      "latency_ms": 115.42059999192134,
+      "latency_samples_ms": [
+        101.78070000256412,
+        149.28000001236796,
+        115.42059999192134
+      ],
+      "initial_request_ms": 6.4492999808862805
+    },
+    {
+      "query_id": "val-paraphrase2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "alias",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.840600002557039,
+      "latency_samples_ms": [
+        6.372500007273629,
+        5.840600002557039,
+        5.820199992740527
+      ],
+      "initial_request_ms": 6.773499975679442
+    },
+    {
+      "query_id": "val-paraphrase3",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.588399992324412,
+      "latency_samples_ms": [
+        26.24070001184009,
+        6.542099989019334,
+        6.588399992324412
+      ],
+      "initial_request_ms": 5.973800027277321
+    },
+    {
+      "query_id": "val-paraphrase4",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "f1_at_k": 0,
+        "mrr_at_k": 0,
+        "ndcg_at_k": 0.0
+      },
+      "latency_ms": 5.861900019226596,
+      "latency_samples_ms": [
+        7.082199997967109,
+        5.861900019226596,
+        5.6192999763879925
+      ],
+      "initial_request_ms": 5.728799995267764
+    },
+    {
+      "query_id": "val-paraphrase5",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-genetic",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 5.6471000134479254,
+      "latency_samples_ms": [
+        5.6471000134479254,
+        6.667799985734746,
+        5.335599998943508
+      ],
+      "initial_request_ms": 5.574699986027554
+    },
+    {
+      "query_id": "val-q1",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.530000013299286,
+      "latency_samples_ms": [
+        6.622599990805611,
+        6.0685999924317,
+        6.530000013299286
+      ],
+      "initial_request_ms": 6.346600013785064
+    },
+    {
+      "query_id": "val-q10",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0"
+      ],
+      "ranked_sources": [
+        "val-missing-concept",
+        "val-controller"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.832399987615645,
+      "latency_samples_ms": [
+        5.548399989493191,
+        45.15069999615662,
+        6.832399987615645
+      ],
+      "initial_request_ms": 6.650600000284612
+    },
+    {
+      "query_id": "val-q2",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "multi_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.245099997613579,
+      "latency_samples_ms": [
+        6.245099997613579,
+        6.60649998462759,
+        5.365899996832013
+      ],
+      "initial_request_ms": 7.075000001350418
+    },
+    {
+      "query_id": "val-q3",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-controller",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 8.186899998690933,
+      "latency_samples_ms": [
+        6.967900000745431,
+        10.631200013449416,
+        8.186899998690933
+      ],
+      "initial_request_ms": 111.57959999400191
+    },
+    {
+      "query_id": "val-q4",
+      "family": "pso-negative-association",
+      "category": "negation",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-pso-negation",
+        "val-missing-concept",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.07900001341477,
+      "latency_samples_ms": [
+        7.174200000008568,
+        6.07900001341477,
+        5.713399994419888
+      ],
+      "initial_request_ms": 6.6590999776963145
+    },
+    {
+      "query_id": "val-q5",
+      "family": "whale-parameters",
+      "category": "alias",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0",
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-pso-negation",
+        "val-genetic"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.274299987126142,
+      "latency_samples_ms": [
+        6.274299987126142,
+        5.809499998576939,
+        7.879700016928837
+      ],
+      "initial_request_ms": 5.559399985941127
+    },
+    {
+      "query_id": "val-q6",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-whale"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 7.149499986553565,
+      "latency_samples_ms": [
+        9.885500010568649,
+        7.149499986553565,
+        7.079200004227459
+      ],
+      "initial_request_ms": 6.314400001429021
+    },
+    {
+      "query_id": "val-q7",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-0751c3359e675b38a476e62b5cb594369ebb6bd9b769d39214f40b283a73e88b-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-925a7c7f27df1a0bb1e2ee2779ffd7a56fc13e0cdf2f1f37518588d92097f724-0"
+      ],
+      "ranked_sources": [
+        "val-whale",
+        "val-controller",
+        "val-pso-negation"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 5.8895999973174185,
+      "latency_samples_ms": [
+        5.8895999973174185,
+        5.574400012847036,
+        6.418999982997775
+      ],
+      "initial_request_ms": 5.757799983257428
+    },
+    {
+      "query_id": "val-q8",
+      "family": "unanswerable-validation",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 6.445800012443215,
+      "latency_samples_ms": [
+        5.725499999243766,
+        6.707299995468929,
+        6.445800012443215
+      ],
+      "initial_request_ms": 6.385000015143305
+    },
+    {
+      "query_id": "val-q9",
+      "family": "controller-rules|genetic-chain|unmodeled-algorithm",
+      "category": "ambiguous",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-6787ff525f7f82d5a7353d13c428b52af5cc57485d3560ab8645042bb654c84a-0",
+        "chunk-8193657ae978a364a9723bd4b1df3196d2fa8890dfe5a317f6e5bf929670e85a-0",
+        "chunk-9d53f0b7b5ea442bccd1a7f3d88ea623b1a337aeffb8de3eaac4d41eaf75ecd9-0"
+      ],
+      "ranked_sources": [
+        "val-genetic",
+        "val-controller",
+        "val-missing-concept"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-2a5de97b09b461b52749c61c",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 1.0,
+        "recall_at_k": 1.0,
+        "f1_at_k": 1.0,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 6.973599985940382,
+      "latency_samples_ms": [
+        6.767599988961592,
+        6.973599985940382,
+        7.261899998411536
+      ],
+      "initial_request_ms": 7.406099990475923
+    }
+  ],
+  "limitations": [
+    "These results measure only this dataset; inspect review_status and provenance before making quality claims.",
+    "Source-separated evaluation uses an isolated corpus for each partition; it is not a mixed-corpus production benchmark.",
+    "Lexical near-duplicate and shared-fact auditing cannot detect all semantic leakage; manual review is required.",
+    "Candidate rankers may be evaluated explicitly; a successful evaluation alone is not production promotion.",
+    "Heuristic ranking scores are not probabilities; calibration/Brier metrics are intentionally omitted.",
+    "Bootstrap resamples connected source-family clusters; fewer than five independent families suppress the interval.",
+    "Latency uses seeded shuffled mode order and repeated warm in-process API requests, not deployed-network latency.",
+    "Citation integrity checks provenance, not whether an excerpt entails an answer."
+  ]
+}

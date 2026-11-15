@@ -1,0 +1,23 @@
+WARD HANDOFF PROCEDURE
+Synthetic operations document | Cedar Ward | Revision 1.0
+
+Shift transfer
+Care Handoff uses Discharge Checklist.
+Care Coordinator supports Care Handoff.
+Discharge Checklist supports Follow Up Plan.
+
+Referral coordination
+Referral Queue supports Care Coordinator.
+Referral Queue supports Follow Up Plan.
+Follow Up Plan uses Procedure Library.
+
+Procedure governance
+Evidence Review supports Procedure Library.
+Procedure Library supports Care Handoff.
+Medication Reconciliation uses Discharge Checklist.
+
+Items pending review
+Medication Reconciliation might improve Referral Queue.
+Evidence Review and Discharge Checklist were discussed together.
+
+This fictional workflow contains no patient records. It illustrates operational documentation only.

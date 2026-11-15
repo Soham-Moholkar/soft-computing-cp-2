@@ -1,0 +1,11 @@
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryTextColor":"#111827","primaryBorderColor":"#111827","lineColor":"#334155","secondaryColor":"#f8fafc","fontFamily":"Arial"}}}%%
+flowchart TD
+    A[Data Ingestion] --> B[Entity and Relation Extraction]
+    B --> C[Fuzzy Confidence Layer]
+    C --> D[Knowledge Graph]
+    D --> E[GA and Swarm Optimization]
+    E --> F[Hybrid Retrieval]
+    F --> G[Explainability]
+    H[Feedback] -. adapts .-> C
+    H -. adapts .-> E
+    G --> H

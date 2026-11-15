@@ -1,0 +1,5 @@
+All slide claims and wording are derived from the user-supplied SoftGraph Intelligence project brief and the repository documentation created from it.
+
+Each right-side diagram is rendered from project-owned Mermaid source stored in docs/presentation/mermaid. The render endpoint is Mermaid Ink: https://mermaid.ink/.
+
+No stock photography, third-party icons, or externally authored charts are used.

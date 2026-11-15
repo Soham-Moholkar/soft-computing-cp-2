@@ -1,0 +1,2957 @@
+{
+  "report_schema": "2",
+  "dataset_version": "synthetic-course-v2-hard-queries",
+  "dataset_sha256": "4ac9e4b0cd6996c04e7e1a68990c3ff05d6cbe1c9ee063a042d683d4385455c8",
+  "dataset_provenance": "Original authored synthetic fixtures for tooling validation. Gold labels are provisional and independent of extractor outputs; human review is pending. Version 2 adds authored paraphrases and adversarial questions; source texts and provisional gold spans are preserved. Cross-split shared factual sentences are explicitly reported for review.",
+  "reviewers": [],
+  "review_status": "unreviewed_synthetic",
+  "split": "train",
+  "test_unlocked": false,
+  "domain": "soft-computing-course",
+  "adaptation_reviewed": false,
+  "leakage_audit": {
+    "method": "casefolded word 5-shingles; Jaccard>=0.8 or containment>=0.9 with >=8 shingles",
+    "near_duplicate_sources": [],
+    "shared_cross_split_facts": [
+      {
+        "left": "train-swarm",
+        "right": "val-genetic",
+        "shared_sentences": [
+          "hybrid retrieval uses knowledge graph"
+        ]
+      }
+    ],
+    "family_counts": {
+      "train": 5,
+      "validation": 5,
+      "test": 4
+    },
+    "limitations": "Lexical audit cannot establish absence of semantic leakage. Shared facts require review but are not automatically the same source family."
+  },
+  "ranker_sha256": null,
+  "feature_version": "ranking-features-1",
+  "latency_protocol": {
+    "mode_order": "seeded shuffled (mode, query) schedule",
+    "warm_repeats_per_query": 3,
+    "cold_index_build_ms": 12.407800008077174,
+    "reported_percentiles": "all repeated in-process API requests; includes snapshot writes"
+  },
+  "seed": 1729,
+  "top_k": 3,
+  "modes": [
+    "lexical",
+    "graph",
+    "fuzzy",
+    "hybrid"
+  ],
+  "source_count": 5,
+  "environment": {
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "dependencies": {
+      "fastapi": "0.135.2",
+      "pydantic": "2.12.5",
+      "httpx": "0.28.1",
+      "pypdf": "6.7.5",
+      "uvicorn": "0.42.0",
+      "python-multipart": "0.0.27"
+    }
+  },
+  "installed_environment": {
+    "CacheControl": "0.14.3",
+    "Cython": "3.1.4",
+    "Deprecated": "1.3.1",
+    "GitPython": "3.1.45",
+    "Jinja2": "3.1.6",
+    "Mako": "1.3.10",
+    "MarkupSafe": "3.0.3",
+    "PyJWT": "2.10.1",
+    "PyMuPDF": "1.27.2.2",
+    "PyNaCl": "1.6.2",
+    "PyQt6": "6.10.0",
+    "PyQt6-Qt6": "6.10.0",
+    "PyQt6_sip": "13.10.2",
+    "PySide6": "6.7.2",
+    "PySide6_Addons": "6.7.2",
+    "PySide6_Essentials": "6.7.2",
+    "PyYAML": "6.0.1",
+    "Pygments": "2.19.2",
+    "QtPy": "2.4.3",
+    "RapidFuzz": "3.14.1",
+    "SQLAlchemy": "2.0.48",
+    "Send2Trash": "1.8.3",
+    "TA-Lib": "0.6.7",
+    "aiofiles": "23.2.1",
+    "aiohappyeyeballs": "2.6.1",
+    "aiohttp": "3.9.1",
+    "aiosignal": "1.4.0",
+    "aiosqlite": "0.22.1",
+    "alembic": "1.18.4",
+    "algokit-utils": "2.4.0",
+    "altair": "5.5.0",
+    "annotated-doc": "0.0.3",
+    "annotated-types": "0.7.0",
+    "anthropic": "0.84.0",
+    "anyio": "3.7.1",
+    "appdirs": "1.4.4",
+    "archfolio-api": "0.1.0",
+    "argcomplete": "3.6.3",
+    "argon2-cffi": "25.1.0",
+    "argon2-cffi-bindings": "25.1.0",
+    "arrow": "1.3.0",
+    "asgiref": "3.11.1",
+    "asttokens": "3.0.0",
+    "async-lru": "2.0.5",
+    "asyncpg": "0.30.0",
+    "attrs": "25.3.0",
+    "babel": "2.17.0",
+    "bcrypt": "4.0.1",
+    "beautifulsoup4": "4.12.2",
+    "bhavviz": "0.1.0",
+    "black": "25.9.0",
+    "bleach": "6.2.0",
+    "blinker": "1.9.0",
+    "build": "1.3.0",
+    "cachetools": "6.2.0",
+    "certifi": "2026.1.4",
+    "cffi": "2.0.0",
+    "charset-normalizer": "3.4.3",
+    "cleo": "2.1.0",
+    "click": "8.3.0",
+    "cloudpickle": "3.1.1",
+    "cmdstanpy": "1.3.0",
+    "colorama": "0.4.6",
+    "coloredlogs": "15.0.1",
+    "colorlog": "6.9.0",
+    "comm": "0.2.3",
+    "contourpy": "1.3.3",
+    "coverage": "7.13.5",
+    "crashtest": "0.4.1",
+    "cryptography": "44.0.0",
+    "curl_cffi": "0.15.0",
+    "cycler": "0.12.1",
+    "debugpy": "1.8.17",
+    "decorator": "5.2.1",
+    "defusedxml": "0.7.1",
+    "distlib": "0.4.0",
+    "distro": "1.9.0",
+    "dnspython": "2.8.0",
+    "docstring_parser": "0.17.0",
+    "duckdb": "1.5.3",
+    "dulwich": "0.24.2",
+    "ecdsa": "0.19.1",
+    "email_validator": "2.2.0",
+    "et_xmlfile": "2.0.0",
+    "executing": "2.2.1",
+    "fakeredis": "2.34.1",
+    "fastapi": "0.135.2",
+    "fastjsonschema": "2.21.2",
+    "feedparser": "6.0.12",
+    "filelock": "3.25.2",
+    "filetype": "1.2.0",
+    "findpython": "0.7.0",
+    "flatbuffers": "25.12.19",
+    "fonttools": "4.60.0",
+    "fqdn": "1.5.1",
+    "frozendict": "2.4.6",
+    "frozenlist": "1.8.0",
+    "fsspec": "2026.2.0",
+    "gitdb": "4.0.12",
+    "google-ai-generativelanguage": "0.6.15",
+    "google-api-core": "2.28.1",
+    "google-api-python-client": "2.187.0",
+    "google-auth": "2.49.0",
+    "google-auth-httplib2": "0.2.1",
+    "google-genai": "1.66.0",
+    "google-generativeai": "0.8.5",
+    "googleapis-common-protos": "1.72.0",
+    "greenlet": "3.2.4",
+    "grpcio": "1.76.0",
+    "grpcio-status": "1.71.2",
+    "h11": "0.16.0",
+    "hiredis": "3.3.0",
+    "holidays": "0.86",
+    "html5lib": "1.1",
+    "httpcore": "1.0.9",
+    "httplib2": "0.31.0",
+    "httptools": "0.7.1",
+    "httpx": "0.28.1",
+    "httpx-sse": "0.4.3",
+    "humanfriendly": "10.0",
+    "idna": "3.11",
+    "imbalanced-learn": "0.14.1",
+    "importlib_metadata": "8.5.0",
+    "importlib_resources": "6.5.2",
+    "iniconfig": "2.1.0",
+    "installer": "0.7.0",
+    "ipykernel": "6.30.1",
+    "ipython": "9.5.0",
+    "ipython_pygments_lexers": "1.1.1",
+    "ipywidgets": "8.1.7",
+    "isoduration": "20.11.0",
+    "isort": "7.0.0",
+    "jaraco.classes": "3.4.0",
+    "jaraco.context": "6.0.1",
+    "jaraco.functools": "4.3.0",
+    "jedi": "0.19.2",
+    "jiter": "0.13.0",
+    "joblib": "1.3.2",
+    "json5": "0.12.1",
+    "jsonpatch": "1.33",
+    "jsonpointer": "3.0.0",
+    "jsonschema": "4.25.1",
+    "jsonschema-specifications": "2025.9.1",
+    "jupyter": "1.0.0",
+    "jupyter-console": "6.6.3",
+    "jupyter-events": "0.12.0",
+    "jupyter-lsp": "2.3.0",
+    "jupyter_client": "8.6.3",
+    "jupyter_core": "5.8.1",
+    "jupyter_server": "2.17.0",
+    "jupyter_server_terminals": "0.5.3",
+    "jupyterlab": "4.4.8",
+    "jupyterlab_pygments": "0.3.0",
+    "jupyterlab_server": "2.27.3",
+    "jupyterlab_widgets": "3.0.15",
+    "kaggle": "2.0.0",
+    "kagglesdk": "0.1.16",
+    "keyring": "25.6.0",
+    "kiwisolver": "1.4.9",
+    "langchain": "1.2.10",
+    "langchain-anthropic": "1.3.4",
+    "langchain-core": "1.2.17",
+    "langchain-google-genai": "4.2.1",
+    "langchain-openai": "1.1.10",
+    "langgraph": "1.0.10",
+    "langgraph-checkpoint": "4.0.1",
+    "langgraph-prebuilt": "1.0.8",
+    "langgraph-sdk": "0.3.9",
+    "langsmith": "0.7.14",
+    "lark": "1.3.0",
+    "lightgbm": "4.6.0",
+    "llvmlite": "0.44.0",
+    "lxml": "4.9.3",
+    "markdown-it-py": "4.0.0",
+    "matplotlib": "3.8.2",
+    "matplotlib-inline": "0.1.7",
+    "mcp": "1.26.0",
+    "mdurl": "0.1.2",
+    "mistune": "3.1.4",
+    "more-itertools": "10.8.0",
+    "mplfinance": "0.12.10b0",
+    "mpmath": "1.3.0",
+    "msgpack": "1.1.2",
+    "multidict": "6.7.0",
+    "multitasking": "0.0.12",
+    "mypy": "1.18.2",
+    "mypy_extensions": "1.1.0",
+    "narwhals": "2.6.0",
+    "nbclient": "0.10.2",
+    "nbconvert": "7.16.6",
+    "nbformat": "5.10.4",
+    "nest-asyncio": "1.6.0",
+    "networkx": "3.6.1",
+    "notebook": "7.4.6",
+    "notebook_shim": "0.2.4",
+    "numba": "0.61.2",
+    "numpy": "1.26.2",
+    "onnxruntime": "1.20.1",
+    "openai": "2.26.0",
+    "opencv-python": "4.13.0.92",
+    "openpyxl": "3.1.5",
+    "opentelemetry-api": "1.29.0",
+    "opentelemetry-instrumentation": "0.50b0",
+    "opentelemetry-instrumentation-asgi": "0.50b0",
+    "opentelemetry-instrumentation-fastapi": "0.50b0",
+    "opentelemetry-sdk": "1.29.0",
+    "opentelemetry-semantic-conventions": "0.50b0",
+    "opentelemetry-util-http": "0.50b0",
+    "optuna": "4.5.0",
+    "orjson": "3.11.7",
+    "ormsgpack": "1.12.2",
+    "packaging": "25.0",
+    "pandas": "2.1.3",
+    "pandas-stubs": "2.3.2.250926",
+    "pandas-ta": "0.4.71b0",
+    "pandera": "0.26.1",
+    "pandocfilters": "1.5.1",
+    "parso": "0.8.5",
+    "passlib": "1.7.4",
+    "pathspec": "0.12.1",
+    "patsy": "1.0.2",
+    "pbs-installer": "2025.9.18",
+    "pdfminer.six": "20251230",
+    "pdfplumber": "0.11.9",
+    "peewee": "3.18.3",
+    "pglast": "7.14",
+    "pillow": "11.3.0",
+    "pip": "25.2",
+    "pipx": "1.8.0",
+    "pkginfo": "1.12.1.2",
+    "platformdirs": "4.4.0",
+    "plotly": "6.3.1",
+    "pluggy": "1.6.0",
+    "poetry": "2.2.1",
+    "poetry-core": "2.2.1",
+    "polars": "1.34.0",
+    "polars-runtime-32": "1.34.0",
+    "prometheus_client": "0.23.1",
+    "prompt_toolkit": "3.0.52",
+    "propcache": "0.4.1",
+    "prophet": "1.1.5",
+    "proto-plus": "1.26.1",
+    "protobuf": "5.29.5",
+    "psutil": "7.1.0",
+    "psycopg": "3.3.3",
+    "psycopg-binary": "3.3.3",
+    "psycopg2-binary": "2.9.10",
+    "pure_eval": "0.2.3",
+    "py-algorand-sdk": "2.11.1",
+    "pyarrow": "16.1.0",
+    "pyasn1": "0.6.1",
+    "pyasn1_modules": "0.4.2",
+    "pycparser": "3.0",
+    "pycryptodomex": "3.23.0",
+    "pydantic": "2.12.5",
+    "pydantic-settings": "2.13.1",
+    "pydantic_core": "2.41.5",
+    "pydeck": "0.9.1",
+    "pyparsing": "3.2.5",
+    "pypdf": "6.7.5",
+    "pypdfium2": "5.5.0",
+    "pyproject_hooks": "1.2.0",
+    "pyreadline3": "3.5.4",
+    "pytesseract": "0.3.13",
+    "pytest": "8.4.2",
+    "pytest-asyncio": "0.26.0",
+    "pytest-cov": "6.3.0",
+    "python-dateutil": "2.8.2",
+    "python-docx": "1.2.0",
+    "python-dotenv": "1.0.1",
+    "python-jose": "3.3.0",
+    "python-json-logger": "3.3.0",
+    "python-multipart": "0.0.27",
+    "python-slugify": "8.0.4",
+    "pytokens": "0.1.10",
+    "pytz": "2025.2",
+    "pywin32": "311",
+    "pywin32-ctypes": "0.2.3",
+    "pywinpty": "3.0.0",
+    "pyzbar": "0.1.9",
+    "pyzmq": "27.1.0",
+    "qtconsole": "5.7.0",
+    "rank-bm25": "0.2.2",
+    "redis": "5.2.1",
+    "referencing": "0.36.2",
+    "regex": "2026.2.28",
+    "reportlab": "4.4.10",
+    "requests": "2.32.3",
+    "requests-toolbelt": "1.0.0",
+    "reusable-auth-backend": "0.1.0",
+    "rfc3339-validator": "0.1.4",
+    "rfc3986": "1.5.0",
+    "rfc3986-validator": "0.1.1",
+    "rfc3987-syntax": "1.1.0",
+    "rich": "14.2.0",
+    "rpds-py": "0.27.1",
+    "rsa": "4.9.1",
+    "ruff": "0.14.0",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.11.4",
+    "seaborn": "0.13.0",
+    "setuptools": "70.2.0",
+    "sgmllib3k": "1.0.0",
+    "shap": "0.48.0",
+    "shellingham": "1.5.4",
+    "shiboken6": "6.7.2",
+    "six": "1.17.0",
+    "sklearn-compat": "0.1.5",
+    "slicer": "0.0.8",
+    "smmap": "5.0.2",
+    "sniffio": "1.3.1",
+    "sortedcontainers": "2.4.0",
+    "soupsieve": "2.8",
+    "sqlmodel": "0.0.38",
+    "squarify": "0.4.4",
+    "sse-starlette": "3.3.2",
+    "stack-data": "0.6.3",
+    "stanio": "0.5.1",
+    "starlette": "1.0.0",
+    "statsmodels": "0.14.6",
+    "streamlit": "1.50.0",
+    "structlog": "24.4.0",
+    "sympy": "1.14.0",
+    "tenacity": "9.0.0",
+    "terminado": "0.18.1",
+    "text-unidecode": "1.3",
+    "threadpoolctl": "3.6.0",
+    "tiktoken": "0.12.0",
+    "tinycss2": "1.4.0",
+    "tokenize_rt": "6.2.0",
+    "toml": "0.10.2",
+    "tomlkit": "0.13.3",
+    "torch": "2.11.0+cu130",
+    "torchaudio": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "tornado": "6.5.2",
+    "tqdm": "4.67.1",
+    "traitlets": "5.14.3",
+    "trove-classifiers": "2025.9.11.17",
+    "typeguard": "4.4.4",
+    "typer": "0.19.2",
+    "types-python-dateutil": "2.9.0.20250822",
+    "types-pytz": "2025.2.0.20250809",
+    "types-requests": "2.33.0.20260518",
+    "typing-inspect": "0.9.0",
+    "typing-inspection": "0.4.2",
+    "typing_extensions": "4.15.0",
+    "tzdata": "2025.2",
+    "uri-template": "1.3.0",
+    "uritemplate": "4.2.0",
+    "urllib3": "2.5.0",
+    "userpath": "1.9.2",
+    "uuid_utils": "0.14.1",
+    "uvicorn": "0.42.0",
+    "vaderSentiment": "3.3.2",
+    "virtualenv": "20.34.0",
+    "watchdog": "6.0.0",
+    "watchfiles": "1.1.1",
+    "wcwidth": "0.2.14",
+    "webcolors": "24.11.1",
+    "webencodings": "0.5.1",
+    "websocket-client": "1.8.0",
+    "websockets": "15.0.1",
+    "widgetsnbextension": "4.0.14",
+    "wrapt": "2.1.1",
+    "xgboost": "3.0.5",
+    "xxhash": "3.6.0",
+    "yarl": "1.22.0",
+    "yfinance": "1.2.1",
+    "zipp": "3.23.0",
+    "zstandard": "0.25.0"
+  },
+  "code_sha256": "03be6b8aa7ba5140faffe42b7cf5a6f8afa5fee0e549d731ab167fd5cf0f4712",
+  "backend_versions": {
+    "schema_version": "1.0",
+    "graph_version": "graph-sqlite-5",
+    "index_version": "bm25-140f2e43ae6f92577bb0db89",
+    "configuration_version": "retrieval-bm25-1",
+    "code": "ok",
+    "message": "SoftGraph backend is healthy",
+    "request_id": "local-request",
+    "status": "healthy",
+    "services": {
+      "graph_repository": "healthy",
+      "ingestion_repository": "healthy",
+      "ranking_artifact": "baseline"
+    }
+  },
+  "extraction": {
+    "mentions": {
+      "tp": 11,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "f1": 0.9565217391304348
+    },
+    "relations": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "end_to_end_resolution_accuracy": 0.9166666666666666,
+    "gold_mentions": 12,
+    "missing_mentions": [
+      [
+        "train-novel",
+        0,
+        22,
+        "Differential Evolution"
+      ]
+    ],
+    "unexpected_mentions": [],
+    "missing_relations": [],
+    "unexpected_relations": []
+  },
+  "summary": {
+    "lexical": {
+      "queries": 11,
+      "answerable_queries": 8,
+      "no_answer_queries": 3,
+      "answerability_accuracy": 0.7272727272727273,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 1.0,
+      "answerable_response_with_relevant_evidence_rate": 0.625,
+      "citation_integrity": 1.0,
+      "cited_queries": 11,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 37.043899996206164,
+      "latency_p95_ms": 40.578580007422715,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.3333333333333333,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 1.0,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9375,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9538662191964322,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "no_answer": {
+          "n": 3,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 3,
+          "answerability_accuracy": 0.6666666666666666
+        }
+      }
+    },
+    "graph": {
+      "queries": 11,
+      "answerable_queries": 8,
+      "no_answer_queries": 3,
+      "answerability_accuracy": 0.6363636363636364,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 1.0,
+      "answerable_response_with_relevant_evidence_rate": 0.5,
+      "citation_integrity": 1.0,
+      "cited_queries": 11,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 36.76760001690127,
+      "latency_p95_ms": 41.16914000478573,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.3333333333333333,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 1.0,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9375,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9538662191964322,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.0
+        },
+        "no_answer": {
+          "n": 3,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 3,
+          "answerability_accuracy": 0.6666666666666666
+        }
+      }
+    },
+    "fuzzy": {
+      "queries": 11,
+      "answerable_queries": 8,
+      "no_answer_queries": 3,
+      "answerability_accuracy": 0.7272727272727273,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 1.0,
+      "answerable_response_with_relevant_evidence_rate": 0.625,
+      "citation_integrity": 1.0,
+      "cited_queries": 11,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 36.91550000803545,
+      "latency_p95_ms": 41.69015999068506,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.3333333333333333,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 1.0,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9375,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9538662191964322,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "no_answer": {
+          "n": 3,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 3,
+          "answerability_accuracy": 0.6666666666666666
+        }
+      }
+    },
+    "hybrid": {
+      "queries": 11,
+      "answerable_queries": 8,
+      "no_answer_queries": 3,
+      "answerability_accuracy": 0.7272727272727273,
+      "no_answer_abstention_rate": 1.0,
+      "false_evidence_rate_on_no_answer": 0.0,
+      "answerable_evidence_coverage": 1.0,
+      "answerable_response_with_relevant_evidence_rate": 0.625,
+      "citation_integrity": 1.0,
+      "cited_queries": 11,
+      "failure_rate": 0.0,
+      "latency_p50_ms": 38.46239999984391,
+      "latency_p95_ms": 50.691939989337676,
+      "retrieval": {
+        "precision_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.3333333333333333,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "recall_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 1.0,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "f1_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.5,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "mrr_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9375,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        },
+        "ndcg_at_k": {
+          "n": 8,
+          "families": 4,
+          "mean": 0.9538662191964322,
+          "bootstrap_95_ci": null,
+          "ci_status": "insufficient_independent_families_minimum_5",
+          "method": "source-family cluster bootstrap; query-weighted mean",
+          "samples": 2000
+        }
+      },
+      "categories": {
+        "alias": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "multi_hop": {
+          "n": 1,
+          "answerability_accuracy": 1.0
+        },
+        "negation": {
+          "n": 2,
+          "answerability_accuracy": 0.5
+        },
+        "no_answer": {
+          "n": 3,
+          "answerability_accuracy": 1.0
+        },
+        "single_hop": {
+          "n": 3,
+          "answerability_accuracy": 0.6666666666666666
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "query_id": "train-adversarial",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 38.84870000183582,
+      "latency_samples_ms": [
+        38.84870000183582,
+        42.039899999508634,
+        37.87739999825135
+      ],
+      "initial_request_ms": 40.43890000320971
+    },
+    {
+      "query_id": "train-paraphrase1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 40.31579999718815,
+      "latency_samples_ms": [
+        38.611500000115484,
+        40.31579999718815,
+        41.063499986194074
+      ],
+      "initial_request_ms": 39.44179997779429
+    },
+    {
+      "query_id": "train-paraphrase2",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.5,
+        "ndcg_at_k": 0.6309297535714574
+      },
+      "latency_ms": 36.66120002162643,
+      "latency_samples_ms": [
+        36.66120002162643,
+        37.1945999795571,
+        34.51420000055805
+      ],
+      "initial_request_ms": 42.14700000011362
+    },
+    {
+      "query_id": "train-paraphrase3",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 34.77879997808486,
+      "latency_samples_ms": [
+        34.10390001954511,
+        34.77879997808486,
+        34.796199994161725
+      ],
+      "initial_request_ms": 35.66229998250492
+    },
+    {
+      "query_id": "train-q1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 36.02780000073835,
+      "latency_samples_ms": [
+        41.45699998480268,
+        35.17790001933463,
+        36.02780000073835
+      ],
+      "initial_request_ms": 39.990499994019046
+    },
+    {
+      "query_id": "train-q2",
+      "family": "swarm-introduction",
+      "category": "multi_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-ant",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 38.40750001836568,
+      "latency_samples_ms": [
+        37.92620002059266,
+        38.941799983149394,
+        38.40750001836568
+      ],
+      "initial_request_ms": 38.71980000985786
+    },
+    {
+      "query_id": "train-q3",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 36.91550000803545,
+      "latency_samples_ms": [
+        36.91550000803545,
+        37.68649999983609,
+        36.8451000249479
+      ],
+      "initial_request_ms": 35.83680000156164
+    },
+    {
+      "query_id": "train-q4",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 35.782899998594075,
+      "latency_samples_ms": [
+        35.782899998594075,
+        34.89440001430921,
+        35.815499984892085
+      ],
+      "initial_request_ms": 38.44010000466369
+    },
+    {
+      "query_id": "train-q5",
+      "family": "fuzzy-support",
+      "category": "single_hop",
+      "mode": "fuzzy",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 39.931300008902326,
+      "latency_samples_ms": [
+        41.28800000762567,
+        39.931300008902326,
+        36.77450001123361
+      ],
+      "initial_request_ms": 35.41180002503097
+    },
+    {
+      "query_id": "train-q6",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 34.240600012708455,
+      "latency_samples_ms": [
+        36.73389999312349,
+        34.240600012708455,
+        33.625599986407906
+      ],
+      "initial_request_ms": 35.23970002424903
+    },
+    {
+      "query_id": "train-q7",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "fuzzy",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 38.66540000308305,
+      "latency_samples_ms": [
+        36.70630001579411,
+        38.66540000308305,
+        42.52630000701174
+      ],
+      "initial_request_ms": 36.17500001564622
+    },
+    {
+      "query_id": "train-adversarial",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 36.833199992543086,
+      "latency_samples_ms": [
+        40.03900001407601,
+        36.833199992543086,
+        36.76760001690127
+      ],
+      "initial_request_ms": 35.809799999697134
+    },
+    {
+      "query_id": "train-paraphrase1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 36.1337999929674,
+      "latency_samples_ms": [
+        35.719200008315966,
+        57.337299978826195,
+        36.1337999929674
+      ],
+      "initial_request_ms": 37.743099994258955
+    },
+    {
+      "query_id": "train-paraphrase2",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.5,
+        "ndcg_at_k": 0.6309297535714574
+      },
+      "latency_ms": 35.14549997635186,
+      "latency_samples_ms": [
+        36.57929998007603,
+        33.36099997977726,
+        35.14549997635186
+      ],
+      "initial_request_ms": 45.38950001006015
+    },
+    {
+      "query_id": "train-paraphrase3",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 33.92750001512468,
+      "latency_samples_ms": [
+        34.485300013329834,
+        33.92750001512468,
+        32.82319998834282
+      ],
+      "initial_request_ms": 33.90410001156852
+    },
+    {
+      "query_id": "train-q1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 38.186000019777566,
+      "latency_samples_ms": [
+        40.50430000643246,
+        38.186000019777566,
+        37.817099975654855
+      ],
+      "initial_request_ms": 38.06369999074377
+    },
+    {
+      "query_id": "train-q2",
+      "family": "swarm-introduction",
+      "category": "multi_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-ant",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 35.845200007315725,
+      "latency_samples_ms": [
+        35.845200007315725,
+        38.1352000113111,
+        34.335400006966665
+      ],
+      "initial_request_ms": 36.15309999440797
+    },
+    {
+      "query_id": "train-q3",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 37.039499991806224,
+      "latency_samples_ms": [
+        39.02119997655973,
+        36.62030000123195,
+        37.039499991806224
+      ],
+      "initial_request_ms": 37.35990001587197
+    },
+    {
+      "query_id": "train-q4",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 37.38200000952929,
+      "latency_samples_ms": [
+        37.7808999910485,
+        37.38200000952929,
+        37.30949998134747
+      ],
+      "initial_request_ms": 37.58239999297075
+    },
+    {
+      "query_id": "train-q5",
+      "family": "fuzzy-support",
+      "category": "single_hop",
+      "mode": "graph",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 35.32629998517223,
+      "latency_samples_ms": [
+        35.32629998517223,
+        35.10530001949519,
+        36.94239998003468
+      ],
+      "initial_request_ms": 34.86340001109056
+    },
+    {
+      "query_id": "train-q6",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 35.841699980665,
+      "latency_samples_ms": [
+        35.841699980665,
+        35.584299999754876,
+        42.16640000231564
+      ],
+      "initial_request_ms": 34.76569999475032
+    },
+    {
+      "query_id": "train-q7",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "graph",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 36.84280000743456,
+      "latency_samples_ms": [
+        37.53400000277907,
+        36.75440000370145,
+        36.84280000743456
+      ],
+      "initial_request_ms": 35.3365000046324
+    },
+    {
+      "query_id": "train-adversarial",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "candidates": [
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.2210028321868744,
+            1.0,
+            0.12902,
+            0.3
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.025084596963102175,
+            0.0,
+            0.12902,
+            0.1
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.022458043545468088,
+            0.0,
+            0.12902,
+            0.1
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.022458043545468088,
+            0.0,
+            0.12902,
+            0.1
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {},
+      "latency_ms": 43.897900002775714,
+      "latency_samples_ms": [
+        38.97609998239204,
+        44.28999999072403,
+        43.897900002775714
+      ],
+      "initial_request_ms": 42.10669998428784
+    },
+    {
+      "query_id": "train-paraphrase1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.5634030369780143,
+            1.0,
+            0.886861,
+            0.6666666666666666
+          ],
+          "grade": 2
+        },
+        {
+          "chunk_id": "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0",
+          "source_id": "train-fuzzy",
+          "features": [
+            0.07537424599956859,
+            0.0,
+            0.12902,
+            0.16666666666666666
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0": 2
+      },
+      "latency_ms": 35.92029999708757,
+      "latency_samples_ms": [
+        35.08739999961108,
+        35.92029999708757,
+        38.9349999895785
+      ],
+      "initial_request_ms": 34.75580000667833
+    },
+    {
+      "query_id": "train-paraphrase2",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.5,
+        "ndcg_at_k": 0.6309297535714574
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.09709624723780017,
+            0.0,
+            0.12902,
+            0.16666666666666666
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.09709624723780017,
+            0.0,
+            0.12902,
+            0.16666666666666666
+          ],
+          "grade": 2
+        }
+      ],
+      "gold_grades": {
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0": 2
+      },
+      "latency_ms": 40.25360001833178,
+      "latency_samples_ms": [
+        37.82870000577532,
+        44.94289998547174,
+        40.25360001833178
+      ],
+      "initial_request_ms": 37.96709998277947
+    },
+    {
+      "query_id": "train-paraphrase3",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.2454129374507587,
+            0.0,
+            0.12902,
+            0.3333333333333333
+          ],
+          "grade": 2
+        },
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.09315802897043474,
+            0.0,
+            0.12902,
+            0.16666666666666666
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0": 2
+      },
+      "latency_ms": 35.009699990041554,
+      "latency_samples_ms": [
+        35.009699990041554,
+        35.40909997536801,
+        34.2780000064522
+      ],
+      "initial_request_ms": 36.32139999535866
+    },
+    {
+      "query_id": "train-q1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.8025631934590712,
+            1.0,
+            0.909815,
+            1.0
+          ],
+          "grade": 2
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.06271149240775543,
+            0.0,
+            0.12902,
+            0.25
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.05614510886367022,
+            0.0,
+            0.12902,
+            0.25
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.05614510886367022,
+            0.0,
+            0.12902,
+            0.25
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0": 2
+      },
+      "latency_ms": 43.95440002554096,
+      "latency_samples_ms": [
+        40.246899996418506,
+        59.31549999513663,
+        43.95440002554096
+      ],
+      "initial_request_ms": 37.60790001251735
+    },
+    {
+      "query_id": "train-q2",
+      "family": "swarm-introduction",
+      "category": "multi_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-ant",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.8295039368712913,
+            1.0,
+            0.909815,
+            1.0
+          ],
+          "grade": 2
+        },
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.21575345212113411,
+            0.0,
+            0.12902,
+            0.4
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.05016919392620435,
+            0.0,
+            0.12902,
+            0.2
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.044916087090936176,
+            0.0,
+            0.12902,
+            0.2
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0": 2
+      },
+      "latency_ms": 37.20930000417866,
+      "latency_samples_ms": [
+        35.895699984394014,
+        40.052800002740696,
+        37.20930000417866
+      ],
+      "initial_request_ms": 38.054100004956126
+    },
+    {
+      "query_id": "train-q3",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.8174045250500301,
+            1.0,
+            0.909815,
+            1.0
+          ],
+          "grade": 2
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.06271149240775543,
+            0.0,
+            0.12902,
+            0.25
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.05614510886367022,
+            0.0,
+            0.12902,
+            0.25
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.052057025679270036,
+            0.0,
+            0.12902,
+            0.25
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0": 2
+      },
+      "latency_ms": 39.52290001325309,
+      "latency_samples_ms": [
+        39.52290001325309,
+        38.46239999984391,
+        41.39200001372956
+      ],
+      "initial_request_ms": 38.13169998466037
+    },
+    {
+      "query_id": "train-q4",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.8710279975408115,
+            1.0,
+            0.12902,
+            1.0
+          ],
+          "grade": 2
+        },
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.17178111426205098,
+            0.0,
+            0.12902,
+            0.3333333333333333
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.04180766160517029,
+            0.0,
+            0.12902,
+            0.16666666666666666
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.03743007257578015,
+            0.0,
+            0.12902,
+            0.16666666666666666
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0": 2
+      },
+      "latency_ms": 37.411199999041855,
+      "latency_samples_ms": [
+        71.47729999269359,
+        37.411199999041855,
+        37.04880000441335
+      ],
+      "initial_request_ms": 37.50420000869781
+    },
+    {
+      "query_id": "train-q5",
+      "family": "fuzzy-support",
+      "category": "single_hop",
+      "mode": "hybrid",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "candidates": [
+        {
+          "chunk_id": "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0",
+          "source_id": "train-fuzzy",
+          "features": [
+            0.7968367959667912,
+            1.0,
+            0.909815,
+            1.0
+          ],
+          "grade": 2
+        }
+      ],
+      "gold_grades": {
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0": 2
+      },
+      "latency_ms": 33.388499985449016,
+      "latency_samples_ms": [
+        34.53620002255775,
+        31.58040001289919,
+        33.388499985449016
+      ],
+      "initial_request_ms": 38.962399994488806
+    },
+    {
+      "query_id": "train-q6",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "candidates": [
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.4529747900390928,
+            1.0,
+            0.16315,
+            0.6
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.05016919392620435,
+            0.0,
+            0.12902,
+            0.2
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.044916087090936176,
+            0.0,
+            0.12902,
+            0.2
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.04164562054341603,
+            0.0,
+            0.12902,
+            0.2
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {},
+      "latency_ms": 37.75899999891408,
+      "latency_samples_ms": [
+        37.75899999891408,
+        40.07340001408011,
+        36.70930000953376
+      ],
+      "initial_request_ms": 39.47619997779839
+    },
+    {
+      "query_id": "train-q7",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "hybrid",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "candidates": [
+        {
+          "chunk_id": "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+          "source_id": "train-wolf",
+          "features": [
+            0.4529747900390928,
+            1.0,
+            0.12902,
+            0.6
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+          "source_id": "train-swarm",
+          "features": [
+            0.41985355441570466,
+            1.0,
+            0.156913,
+            0.6
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+          "source_id": "train-ant",
+          "features": [
+            0.21575345212113411,
+            0.0,
+            0.12902,
+            0.4
+          ],
+          "grade": 0
+        },
+        {
+          "chunk_id": "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+          "source_id": "train-novel",
+          "features": [
+            0.05016919392620435,
+            0.0,
+            0.12902,
+            0.2
+          ],
+          "grade": 0
+        }
+      ],
+      "gold_grades": {},
+      "latency_ms": 39.944799995282665,
+      "latency_samples_ms": [
+        39.944799995282665,
+        40.882600005716085,
+        37.72630001185462
+      ],
+      "initial_request_ms": 37.448199989739805
+    },
+    {
+      "query_id": "train-adversarial",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 40.13070001383312,
+      "latency_samples_ms": [
+        40.13070001383312,
+        38.64459999022074,
+        41.05500000878237
+      ],
+      "initial_request_ms": 38.15169999143109
+    },
+    {
+      "query_id": "train-paraphrase1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 36.690999986603856,
+      "latency_samples_ms": [
+        36.690999986603856,
+        37.449600000400096,
+        35.37900000810623
+      ],
+      "initial_request_ms": 34.64850000455044
+    },
+    {
+      "query_id": "train-paraphrase2",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 0.5,
+        "ndcg_at_k": 0.6309297535714574
+      },
+      "latency_ms": 33.724799985066056,
+      "latency_samples_ms": [
+        34.73019998637028,
+        32.53050000057556,
+        33.724799985066056
+      ],
+      "initial_request_ms": 33.45479999552481
+    },
+    {
+      "query_id": "train-paraphrase3",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": false,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 35.019900009501725,
+      "latency_samples_ms": [
+        35.019900009501725,
+        34.52180000022054,
+        35.92930000741035
+      ],
+      "initial_request_ms": 32.917699980316684
+    },
+    {
+      "query_id": "train-q1",
+      "family": "swarm-introduction",
+      "category": "alias",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 37.07150000263937,
+      "latency_samples_ms": [
+        36.68729998753406,
+        38.02649999852292,
+        37.07150000263937
+      ],
+      "initial_request_ms": 36.954999988665804
+    },
+    {
+      "query_id": "train-q2",
+      "family": "swarm-introduction",
+      "category": "multi_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-swarm",
+        "train-ant",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 36.3264000043273,
+      "latency_samples_ms": [
+        36.3264000043273,
+        37.719500018283725,
+        34.342800005106255
+      ],
+      "initial_request_ms": 34.91250000661239
+    },
+    {
+      "query_id": "train-q3",
+      "family": "ant-paths",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 38.98300000582822,
+      "latency_samples_ms": [
+        38.460400013718754,
+        38.98300000582822,
+        40.31770001165569
+      ],
+      "initial_request_ms": 38.59899999224581
+    },
+    {
+      "query_id": "train-q4",
+      "family": "wolf-negation",
+      "category": "negation",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-novel"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 37.63139998773113,
+      "latency_samples_ms": [
+        37.043899996206164,
+        40.969900001073256,
+        37.63139998773113
+      ],
+      "initial_request_ms": 36.64710000157356
+    },
+    {
+      "query_id": "train-q5",
+      "family": "fuzzy-support",
+      "category": "single_hop",
+      "mode": "lexical",
+      "answerable": true,
+      "failed": false,
+      "abstained": false,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": true,
+      "ranked_chunks": [
+        "chunk-a729751de3604a6f2970bc0a69a0bb8987466cf433d41361d1caa94619f405e3-0"
+      ],
+      "ranked_sources": [
+        "train-fuzzy"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": {
+        "precision_at_k": 0.3333333333333333,
+        "recall_at_k": 1.0,
+        "f1_at_k": 0.5,
+        "mrr_at_k": 1.0,
+        "ndcg_at_k": 1.0
+      },
+      "latency_ms": 36.540200002491474,
+      "latency_samples_ms": [
+        36.46480001043528,
+        36.540200002491474,
+        36.83249998721294
+      ],
+      "initial_request_ms": 38.23310000007041
+    },
+    {
+      "query_id": "train-q6",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0",
+        "chunk-ea6c3741fe886e80d5909f488831b76726ba790d7a2002a43857a9329b8e80ef-0",
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0"
+      ],
+      "ranked_sources": [
+        "train-ant",
+        "train-novel",
+        "train-wolf"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 38.454499997897074,
+      "latency_samples_ms": [
+        38.454499997897074,
+        39.93820000323467,
+        35.23529999074526
+      ],
+      "initial_request_ms": 35.93579999869689
+    },
+    {
+      "query_id": "train-q7",
+      "family": "unanswerable-train",
+      "category": "no_answer",
+      "mode": "lexical",
+      "answerable": false,
+      "failed": false,
+      "abstained": true,
+      "answerability_correct": true,
+      "citation_integrity": true,
+      "relevant_evidence_returned": false,
+      "ranked_chunks": [
+        "chunk-91f475290a0853bcbbb5a4b3fdc34b16cde0b4d8cfe304d8edf8b690df685bbe-0",
+        "chunk-8421076af06b69622ebd06024447e7bfff7e44eb796d709aa8fef4281cb195ab-0",
+        "chunk-b0184bcc50b74de072163fbf8bafee1221f0449f68a06b260f108f0cdb275078-0"
+      ],
+      "ranked_sources": [
+        "train-wolf",
+        "train-swarm",
+        "train-ant"
+      ],
+      "versions": {
+        "graph_version": "graph-sqlite-5",
+        "index_version": "bm25-140f2e43ae6f92577bb0db89",
+        "configuration_version": "retrieval-bm25-1"
+      },
+      "metrics": null,
+      "latency_ms": 37.7130999986548,
+      "latency_samples_ms": [
+        37.7130999986548,
+        38.08729999582283,
+        35.706099995877594
+      ],
+      "initial_request_ms": 38.95619997638278
+    }
+  ],
+  "limitations": [
+    "These results measure only this dataset; inspect review_status and provenance before making quality claims.",
+    "Source-separated evaluation uses an isolated corpus for each partition; it is not a mixed-corpus production benchmark.",
+    "Lexical near-duplicate and shared-fact auditing cannot detect all semantic leakage; manual review is required.",
+    "Candidate rankers may be evaluated explicitly; a successful evaluation alone is not production promotion.",
+    "Heuristic ranking scores are not probabilities; calibration/Brier metrics are intentionally omitted.",
+    "Bootstrap resamples connected source-family clusters; fewer than five independent families suppress the interval.",
+    "Latency uses seeded shuffled mode order and repeated warm in-process API requests, not deployed-network latency.",
+    "Citation integrity checks provenance, not whether an excerpt entails an answer."
+  ]
+}

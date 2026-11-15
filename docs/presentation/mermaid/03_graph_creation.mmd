@@ -1,0 +1,9 @@
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryTextColor":"#111827","primaryBorderColor":"#111827","lineColor":"#334155","secondaryColor":"#f8fafc","fontFamily":"Arial"}}}%%
+flowchart TD
+    A[Ingestion] --> B[Cleaning and Chunking]
+    B --> C[Entity Extraction]
+    C --> D[Relation Extraction]
+    D --> E[Fuzzy Validation]
+    E --> F[Entity Resolution]
+    F --> G[Graph Construction]
+    G --> H[Graph Storage]

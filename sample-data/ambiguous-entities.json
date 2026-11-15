@@ -1,0 +1,31 @@
+{
+  "dataset": "SoftGraph ambiguous entity-resolution demonstration",
+  "simulated": true,
+  "mentions": [
+    {
+      "mention": "PSO",
+      "context": "retrieval weight optimization",
+      "candidates": [
+        { "entity": "Particle Swarm Optimization", "membership": 0.94 },
+        { "entity": "Professional Services Organization", "membership": 0.11 }
+      ]
+    },
+    {
+      "mention": "graph",
+      "context": "multi-hop entity relations",
+      "candidates": [
+        { "entity": "Knowledge Graph", "membership": 0.91 },
+        { "entity": "Statistical Graph", "membership": 0.27 }
+      ]
+    },
+    {
+      "mention": "Apple",
+      "context": "Apple released a machine learning framework",
+      "candidates": [
+        { "entity": "Apple Inc.", "membership": 0.88 },
+        { "entity": "Apple fruit", "membership": 0.19 },
+        { "entity": "Apple Records", "membership": 0.07 }
+      ]
+    }
+  ]
+}

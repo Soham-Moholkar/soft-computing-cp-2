@@ -1,0 +1,10 @@
+[
+  {"text":"PSO improves Hybrid Retrieval.","entities":["Particle Swarm Optimization","Hybrid Retrieval"],"relations":["improves"]},
+  {"text":"Fuzzy Logic supports Knowledge Graph.","entities":["Fuzzy Logic","Knowledge Graph"],"relations":["supports"]},
+  {"text":"Genetic algorithms tune Ranking Weights.","entities":["Genetic Algorithm","Ranking Weights"],"relations":["tunes"]},
+  {"text":"ACO explores Graph Paths.","entities":["Ant Colony Optimization","Graph Paths"],"relations":["explores"]},
+  {"text":"Fuzzy Logic does not support Hybrid Retrieval.","entities":["Fuzzy Logic","Hybrid Retrieval"],"relations":[]},
+  {"text":"Fuzzy Logic and Hybrid Retrieval appear in the course.","entities":["Fuzzy Logic","Hybrid Retrieval"],"relations":[]},
+  {"text":"PSO may improve Hybrid Retrieval.","entities":["Particle Swarm Optimization","Hybrid Retrieval"],"relations":[]},
+  {"text":"An unknown library processes unrelated material.","entities":[],"relations":[]}
+]

@@ -1,0 +1,8 @@
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryTextColor":"#111827","primaryBorderColor":"#111827","lineColor":"#334155","secondaryColor":"#f8fafc","fontFamily":"Arial"}}}%%
+flowchart TD
+    A[Raw Data] --> B[Information]
+    B --> C[Knowledge Graph]
+    C --> D[Intelligent Retrieval]
+    U[Ambiguity and Uncertainty] -. affects .-> B
+    U -. affects .-> C
+    U -. affects .-> D

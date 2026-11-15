@@ -1,0 +1,8 @@
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#ffffff","primaryTextColor":"#111827","primaryBorderColor":"#111827","lineColor":"#334155","secondaryColor":"#f8fafc","fontFamily":"Arial"}}}%%
+flowchart TD
+    A[Crisp Inputs] --> B[Fuzzification]
+    B --> C[Linguistic Rules]
+    C --> D[Mamdani or Sugeno]
+    D --> E[Aggregation]
+    E --> F[Defuzzification]
+    F --> G[Confidence or Relevance]
