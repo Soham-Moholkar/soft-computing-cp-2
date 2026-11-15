@@ -29,6 +29,9 @@ const directory: Policy[] = directoryData
         ? { fundingType: 'Scholarship' as const }
         : {}),
       listingOnly: !profile,
+      ...(item.name.startsWith('AICTE Swanath')
+        ? { goals: ['scholarship', 'orphan support'] }
+        : {}),
       keywords: item.name,
       versions: profile
         ? [profile]
