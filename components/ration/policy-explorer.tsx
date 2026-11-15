@@ -39,6 +39,10 @@ import {
   type PolicyMatch,
 } from '@/lib/policy/search';
 import { EvidenceGraph, type ProofEdge } from './evidence-graph';
+import {
+  EligibilityWorkspace,
+  type ReviewedDocument,
+} from './eligibility-workspace';
 import './policy.css';
 
 const topics = [
@@ -83,7 +87,7 @@ const examples = [
 ];
 const layers = [
   { id: 'path', title: 'Evidence graph', icon: Waypoints },
-  { id: 'eligibility', title: 'Who qualifies', icon: Users },
+  { id: 'eligibility', title: 'Eligibility & requirements', icon: Users },
   { id: 'funding', title: 'Money', icon: IndianRupee },
   { id: 'documents', title: 'Documents', icon: FileText },
 ] as const;
@@ -189,6 +193,9 @@ export function PolicyExplorer() {
   const [layer, setLayer] = useState<EvidenceLayer>('path');
   const [cost, setCost] = useState('');
   const [limit, setLimit] = useState(7);
+  const [documents, setDocuments] = useState<Record<string, ReviewedDocument>>(
+    {},
+  );
   const interpretationTask = useRef<AbortController | null>(null);
   const [suggestion, setSuggestion] = useState('');
   const [interpretationStatus, setInterpretationStatus] = useState('');
@@ -219,6 +226,8 @@ export function PolicyExplorer() {
   const other = policy?.versions.find(
     (item) => item.id === compare && item.id !== version?.id,
   );
+  const documentKey =
+    policy && version ? JSON.stringify([policy.id, version.id]) : '';
   const interpretedLabels = [
     ['Goal', plan.goal],
     [
@@ -250,7 +259,7 @@ export function PolicyExplorer() {
     setPicked(id);
     setVersionId('');
     setCompare('');
-    setLayer('path');
+    setCost('');
   }
   function ask(value: string) {
     interpretationTask.current?.abort();
@@ -259,7 +268,9 @@ export function PolicyExplorer() {
     setQuery(value);
     setAsked(value.trim());
     setLimit(7);
+    setUse('From question');
     pick('');
+    setLayer('path');
     const request = understand(value).request;
     if (request === 'Money') setLayer('funding');
     if (request === 'Documents') setLayer('documents');
@@ -307,7 +318,7 @@ export function PolicyExplorer() {
 
   const numberCost = Number(cost);
   const edges =
-    policy && version
+    policy && version && layer !== 'eligibility'
       ? graphFor(policy, version, asked, layer, numberCost, other)
       : [];
 
@@ -319,8 +330,8 @@ export function PolicyExplorer() {
             <BookOpen size={16} /> India Policy Explorer
           </p>
           <h1>
-            What do you need
-            <br /> help <em>paying for?</em>
+            Find government support
+            <br /> <em>for your situation.</em>
           </h1>
           <p>
             Describe your situation. Find government programmes, compare the
@@ -352,7 +363,7 @@ export function PolicyExplorer() {
         </div>
         <aside className="policy-story" aria-label="Example scenario">
           <span>Explore a real scenario</span>
-          <button type="button" onClick={() => ask(examples[0].value)}>
+          <button type="button" onClick={() => ask(examples[3].value)}>
             Buying a vehicle for work <ArrowUpRight size={19} />
           </button>
         </aside>
@@ -516,6 +527,17 @@ export function PolicyExplorer() {
                 Change a filter, try a broader description, or open the official
                 national directory.
               </p>
+              <button
+                type="button"
+                className="policy-link"
+                onClick={() => {
+                  setTopic('All topics');
+                  setLocation('All locations');
+                  ask('');
+                }}
+              >
+                Reset search and filters
+              </button>
               <a
                 href="https://www.myscheme.gov.in/"
                 target="_blank"
@@ -545,6 +567,7 @@ export function PolicyExplorer() {
                       onChange={(event) => {
                         setVersionId(event.target.value);
                         setCompare('');
+                        setCost('');
                       }}
                     >
                       {policy.versions.map((item) => (
@@ -653,38 +676,52 @@ export function PolicyExplorer() {
                   </p>
                 </section>
               )}
-              <div className="policy-proof">
-                <EvidenceGraph
-                  key={[
-                    policy.id,
-                    version.id,
-                    asked,
-                    compare,
-                    layer,
-                    cost,
-                  ].join('|')}
-                  edges={edges}
-                  title={
-                    layer === 'path'
-                      ? 'Policy evidence graph'
-                      : layer === 'eligibility'
-                        ? 'Eligibility evidence graph'
+              {layer === 'eligibility' ? (
+                <EligibilityWorkspace
+                  key={documentKey}
+                  policy={policy}
+                  version={version}
+                  document={documents[documentKey]}
+                  onApply={(document) =>
+                    setDocuments((previous) => {
+                      if (document)
+                        return { ...previous, [documentKey]: document };
+                      const updated = { ...previous };
+                      delete updated[documentKey];
+                      return updated;
+                    })
+                  }
+                />
+              ) : (
+                <div className="policy-proof">
+                  <EvidenceGraph
+                    key={[
+                      policy.id,
+                      version.id,
+                      asked,
+                      compare,
+                      layer,
+                      cost,
+                    ].join('|')}
+                    edges={edges}
+                    title={
+                      layer === 'path'
+                        ? 'Policy evidence graph'
                         : layer === 'funding'
                           ? 'Funding evidence graph'
                           : 'Document evidence graph'
-                  }
-                  words={[
-                    layer === 'path'
-                      ? 'No relationship is indexed for this view.'
-                      : layer === 'eligibility'
-                        ? 'No eligibility criteria are indexed for this version.'
+                    }
+                    words={[
+                      layer === 'path'
+                        ? 'No relationship is indexed for this view.'
                         : layer === 'funding'
                           ? 'No amount is indexed for this version.'
                           : 'No checklist is indexed for this version.',
-                    'Open the official document for details.',
-                  ]}
-                />
-              </div>
+                      'Open the official document for details.',
+                    ]}
+                  />
+                </div>
+              )}
               {policy.similar?.length ? (
                 <div className="policy-related">
                   <p>Explore another programme in this area</p>

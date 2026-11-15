@@ -70,6 +70,7 @@ export function directoryProfile(item: Listing): Version | undefined {
       target,
       kind: 'Rule',
       keywords: item.name + ' ' + section.heading,
+      verbatim: true,
       evidence: section.lines.join('\n'),
       source: { ...source, locator: 'About Scheme · ' + section.heading },
     });

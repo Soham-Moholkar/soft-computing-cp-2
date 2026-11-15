@@ -121,7 +121,7 @@ const scenarios = [
 
 export function RationDesk() {
   const [language, setLanguage] = useState<Language>('en');
-  const [view, setView] = useState<'help' | 'lab' | 'policy'>('help');
+  const [view, setView] = useState<'help' | 'lab' | 'policy'>('policy');
   const [question, setQuestion] = useState('');
   const [asked, setAsked] = useState('');
   const [search, setSearch] = useState<ReturnType<typeof searchGuide> | null>(
@@ -154,6 +154,7 @@ export function RationDesk() {
 
   function changeLanguage(value: Language) {
     setLanguage(value);
+    if (view === 'policy') setView('help');
     localStorage.setItem('ration-language', value);
   }
 
@@ -177,12 +178,17 @@ export function RationDesk() {
     <div className="rs-app" lang={language}>
       <header className="rs-header">
         <div className="rs-container rs-header-content">
-          <a className="rs-brand" href="#top" onClick={() => setView('help')}>
+          <a className="rs-brand" href="#top" onClick={() => setView('policy')}>
             <span>
               <Wheat size={24} />
             </span>
             <strong>
-              Ration Saathi<small>{t.label}</small>
+              Ration Saathi
+              <small>
+                {language === 'hi'
+                  ? 'सरकारी योजनाएँ और राशन सहायता'
+                  : 'Government schemes and ration help'}
+              </small>
             </strong>
           </a>
           <nav aria-label={language === 'hi' ? 'मुख्य मेनू' : 'Main navigation'}>
@@ -211,7 +217,11 @@ export function RationDesk() {
               {language === 'hi' ? 'नीति खोजें' : 'Policy explorer'}
             </button>
           </nav>
-          <div className="rs-language" aria-label="Language">
+          <div
+            className="rs-language"
+            aria-label="Ration guide language"
+            title="Change the ration guide language"
+          >
             <button
               type="button"
               aria-pressed={language === 'en'}
@@ -420,11 +430,12 @@ export function RationDesk() {
               </a>
             </footer>
           </>
-        ) : view === 'policy' ? (
-          <PolicyExplorer />
-        ) : (
+        ) : view === 'lab' ? (
           <UploadLab key={language} language={language} />
-        )}
+        ) : null}
+        <div hidden={view !== 'policy'} lang="en">
+          <PolicyExplorer />
+        </div>
       </main>
     </div>
   );

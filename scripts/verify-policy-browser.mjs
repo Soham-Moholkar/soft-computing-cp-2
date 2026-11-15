@@ -17,9 +17,14 @@ try {
   page.setDefaultTimeout(10000);
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto(process.env.RATION_PREVIEW_URL ?? 'http://127.0.0.1:3001/');
+  await page.goto(process.env.RATION_PREVIEW_URL ?? 'http://127.0.0.1:3001/', {
+    waitUntil: 'networkidle',
+  });
   const button = (name) => page.getByRole('button', { name, exact: true });
-  await button('Policy explorer').click();
+  assert.equal(
+    await button('Policy explorer').getAttribute('aria-pressed'),
+    'true',
+  );
   const ask = async (question) => {
     await page.getByLabel('Ask in your own words').fill(question);
     await button('Find support').click();
@@ -44,7 +49,7 @@ try {
     'Expected funding, eligibility and documents for at least 103 profiles',
   );
   await button('Show more').click();
-  assert.ok((await page.locator('.policy-match').count()) > 7);
+  await page.locator('.policy-match').nth(7).waitFor();
 
   await ask(
     'I want to buy an auto rickshaw. Can the government help me in that?',
@@ -230,10 +235,88 @@ try {
     await page.locator('.policy-interpretation').innerText(),
     /Find widow support.*Widowhood/s,
   );
-  await button('Who qualifies').click();
+  await button('Eligibility & requirements').click();
   assert.match(
-    await proof('Eligibility evidence graph').innerText(),
+    await proof('Eligibility & requirements graph').innerText(),
     /BPL households/,
+  );
+  await page
+    .getByText('Extract from a policy document', { exact: true })
+    .click();
+  await page.getByLabel('Document title').fill('Synthetic policy test');
+  await page
+    .getByLabel('Policy document text')
+    .fill(
+      'Eligibility:\nApplicants must be aged 18 or older AND\nreside in Maharashtra.\nDocuments required:\n- Proof of residence.',
+    );
+  await button('Review extracted passages').click();
+  await button('Add selected passages to graph').click();
+  const eligibility = proof('Eligibility & requirements graph');
+  const inspector = eligibility.locator('.requirements-inspector');
+  assert.match(
+    await inspector.innerText(),
+    /Document excerpt you supplied.*Synthetic policy test/s,
+  );
+  await inspector.getByText('Read the surrounding text').click();
+  assert.match(await inspector.innerText(), /AND\s+reside in Maharashtra/);
+  const versions = page.getByLabel('Document version');
+  const previousVersion = await versions.inputValue();
+  const differentVersion = await versions
+    .locator('option')
+    .evaluateAll(
+      (options, selected) =>
+        options.find((option) => option.value !== selected)?.value,
+      previousVersion,
+    );
+  assert.ok(differentVersion);
+  await versions.selectOption(differentVersion);
+  assert.equal(
+    await eligibility.getByRole('button', { name: /Added excerpt/ }).count(),
+    0,
+  );
+  await versions.selectOption(previousVersion);
+  assert.equal(
+    await eligibility.getByRole('button', { name: /Added excerpt/ }).count(),
+    3,
+  );
+  await button('Get help').click();
+  await button('Policy explorer').click();
+  assert.equal(
+    await eligibility.getByRole('button', { name: /Added excerpt/ }).count(),
+    3,
+  );
+  await page
+    .getByText('Extract from a policy document', { exact: true })
+    .click();
+  const upload = eligibility.getByLabel('Choose a text file');
+  await upload.setInputFiles({
+    name: 'unsupported.pdf',
+    mimeType: 'application/pdf',
+    buffer: Buffer.from('not a supported file'),
+  });
+  await eligibility.getByText(/Choose a TXT or Markdown file/).waitFor();
+  assert.equal(
+    await eligibility.getByLabel('Policy document text').inputValue(),
+    '',
+  );
+  await upload.setInputFiles({
+    name: 'synthetic-criteria.md',
+    mimeType: 'text/markdown',
+    buffer: Buffer.from(
+      '## Eligibility\n- Applicants must be currently enrolled.',
+    ),
+  });
+  await button('Review extracted passages').click();
+  await button('Add selected passages to graph').click();
+  assert.match(await inspector.innerText(), /synthetic-criteria\.md/);
+  assert.equal(
+    await eligibility.getByRole('button', { name: /Added excerpt/ }).count(),
+    1,
+  );
+  await button('Remove added passages').click();
+  assert.equal(
+    await eligibility.getByRole('button', { name: /Added excerpt/ }).count(),
+    0,
   );
   await button('Money').click();
   assert.match(
@@ -295,8 +378,26 @@ try {
       exact: true,
     })
     .waitFor();
+  await button('Eligibility & requirements').click();
+  const scholarshipGraph = proof('Eligibility & requirements graph');
+  await scholarshipGraph
+    .getByRole('button', { name: /2,50,000/ })
+    .first()
+    .click();
+  const scholarshipSource = scholarshipGraph.locator('.requirements-inspector');
+  assert.match(
+    await scholarshipSource.innerText(),
+    /Recorded source excerpt.*Eligibility/s,
+  );
+  assert.match(
+    await scholarshipSource.getByRole('link').getAttribute('href'),
+    /mahadbt\.maharashtra\.gov\.in\/SchemeData/,
+  );
+  await mkdir('output/playwright', { recursive: true });
+  await scholarshipGraph.screenshot({
+    path: 'output/playwright/policy-eligibility-desktop.png',
+  });
   for (const [tab, region, section, content] of [
-    ['Who qualifies', 'Eligibility evidence graph', 'Eligibility', /2,50,000/],
     ['Money', 'Funding evidence graph', 'Benefits', /Maintenance Allowance/i],
     [
       'Documents',
@@ -339,9 +440,9 @@ try {
       exact: true,
     })
     .waitFor();
-  await button('Who qualifies').click();
+  await button('Eligibility & requirements').click();
   assert.match(
-    await proof('Eligibility evidence graph').innerText(),
+    await proof('Eligibility & requirements graph').innerText(),
     /Widowed, divorced or abandoned/,
   );
   await button('Money').click();
@@ -386,18 +487,24 @@ try {
     /Widowhood/,
   );
   await page.setViewportSize({ width: 390, height: 844 });
+  await button('Eligibility & requirements').click();
   assert.equal(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
     true,
   );
+  await proof('Eligibility & requirements graph').screenshot({
+    path: 'output/playwright/policy-eligibility-mobile.png',
+  });
   await ask('satellite telescope repair');
   await current
     .getByRole('heading', {
       name: 'There’s no matching policy in this collection.',
     })
     .waitFor();
+  await button('Reset search and filters').click();
+  await current.getByLabel('Document version').waitFor();
   assert.deepEqual(errors, []);
   console.log(
     'PASS: catalogue coverage, widow and bereavement queries, eligibility and source links, funding and document graphs, scholarships, vehicle goals, jurisdiction, history and mobile layout.',

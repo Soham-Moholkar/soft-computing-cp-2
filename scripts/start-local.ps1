@@ -67,11 +67,16 @@ function Get-BuildFingerprint {
     foreach ($pattern in @('package.json', 'pnpm-lock.yaml', 'vite.config.*', 'next.config.*', 'tsconfig.json', '.env*', 'postcss.config.*', 'tailwind.config.*')) {
         foreach ($file in Get-ChildItem -Path (Join-Path $projectRoot $pattern) -File) { $inputs.Add($file.FullName) }
     }
-    $records = foreach ($path in ($inputs | Sort-Object -Unique)) {
-        $relative = $path.Substring($projectRoot.Length)
-        $digest = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash
-        "$relative=$digest"
-    }
+    $sourceHash = [Security.Cryptography.SHA256]::Create()
+    try {
+        $records = foreach ($path in ($inputs | Sort-Object -Unique)) {
+            $relative = $path.Substring($projectRoot.Length)
+            $stream = [IO.File]::OpenRead($path)
+            try { $digest = [BitConverter]::ToString($sourceHash.ComputeHash($stream)).Replace('-', '') }
+            finally { $stream.Dispose() }
+            "$relative=$digest"
+        }
+    } finally { $sourceHash.Dispose() }
     $publicEnvironment = Get-ChildItem Env: | Where-Object Name -Like 'NEXT_PUBLIC_*' | Sort-Object Name | ForEach-Object { "$($_.Name)=$($_.Value)" }
     $content = "$nodeVersion`n$($records -join "`n")`n$($publicEnvironment -join "`n")"
     $sha = [Security.Cryptography.SHA256]::Create()

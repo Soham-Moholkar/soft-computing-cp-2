@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Ration Saathi — Find your next step',
+  title: 'Ration Saathi — Government schemes and ration help',
   description:
-    'Find ration guidance in plain English and Hindi, with links to official sources.',
+    'Explore government schemes, compare policy requirements and official sources, or find ration guidance in English and Hindi.',
 };
 
 export default function RootLayout({

@@ -19,6 +19,7 @@ export interface Rule {
   target: string;
   kind: LinkKind;
   evidence: string;
+  verbatim?: boolean;
   keywords: string;
   source?: OfficialSource;
 }
