@@ -120,6 +120,9 @@ try {
     $env:NEXT_PUBLIC_SITE_URL = 'http://127.0.0.1:3001'
     $env:SOFTGRAPH_CORS_ORIGINS = 'http://127.0.0.1:3001,http://localhost:3001'
     $env:SOFTGRAPH_BACKEND_URL = 'http://127.0.0.1:8001'
+    if (!(Test-Path Env:RATION_POLICY_OLLAMA_MODEL) -and (Get-Command ollama -ErrorAction SilentlyContinue)) {
+        $env:RATION_POLICY_OLLAMA_MODEL = 'qwen3:8b'
+    }
     [void](New-Item -ItemType Directory -Path $runtimeDirectory -Force)
     $runId = '{0}-{1}' -f (Get-Date -Format 'yyyyMMdd-HHmmss'), $PID
 

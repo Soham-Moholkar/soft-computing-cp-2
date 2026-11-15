@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -26,6 +26,11 @@ import type {
 } from '@/lib/policy/catalog';
 import { detailedCount, fullGraphCount, policyIndex } from '@/lib/policy/index';
 import {
+  ambiguousWidowPhrase,
+  isQueryIntent,
+  queryIntents,
+} from '@/lib/policy/query-intents';
+import {
   jurisdictions,
   policyMatches,
   rankRules,
@@ -47,6 +52,11 @@ const examples = [
   {
     label: 'Find support as a widow',
     value: 'I am a widow and I need support',
+    icon: Users,
+  },
+  {
+    label: 'Find help as a single parent',
+    value: 'I am a single parent and need help supporting my children',
     icon: Users,
   },
   {
@@ -179,6 +189,10 @@ export function PolicyExplorer() {
   const [layer, setLayer] = useState<EvidenceLayer>('path');
   const [cost, setCost] = useState('');
   const [limit, setLimit] = useState(7);
+  const interpretationTask = useRef<AbortController | null>(null);
+  const [suggestion, setSuggestion] = useState('');
+  const [interpretationStatus, setInterpretationStatus] = useState('');
+  useEffect(() => () => interpretationTask.current?.abort(), []);
   const plan = useMemo(() => {
     const interpreted = understand(asked, location);
     if (interpreted.asset && use !== 'From question') {
@@ -239,6 +253,9 @@ export function PolicyExplorer() {
     setLayer('path');
   }
   function ask(value: string) {
+    interpretationTask.current?.abort();
+    setSuggestion('');
+    setInterpretationStatus('');
     setQuery(value);
     setAsked(value.trim());
     setLimit(7);
@@ -247,6 +264,45 @@ export function PolicyExplorer() {
     if (request === 'Money') setLayer('funding');
     if (request === 'Documents') setLayer('documents');
     if (request === 'Eligibility') setLayer('eligibility');
+  }
+
+  async function interpretLocally() {
+    interpretationTask.current?.abort();
+    const controller = new AbortController();
+    interpretationTask.current = controller;
+    setSuggestion('');
+    setInterpretationStatus('Checking your wording with the local model…');
+    try {
+      const response = await fetch('/api/policy/interpret', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ question: asked }),
+        signal: controller.signal,
+      });
+      const result = (await response.json()) as {
+        status?: unknown;
+        intent?: unknown;
+      } | null;
+      if (controller.signal.aborted) return;
+      if (result?.status === 'ready' && isQueryIntent(result.intent)) {
+        const candidate = queryIntents[result.intent];
+        setSuggestion(candidate);
+        setInterpretationStatus(
+          candidate
+            ? 'Did you mean this?'
+            : 'Try describing who needs help and what they need.',
+        );
+      } else {
+        setInterpretationStatus(
+          'The local model is unavailable. You can reword your search or try the official directory.',
+        );
+      }
+    } catch {
+      if (!controller.signal.aborted)
+        setInterpretationStatus(
+          'The local model is unavailable. You can reword your search or try the official directory.',
+        );
+    }
   }
 
   const numberCost = Number(cost);
@@ -379,8 +435,7 @@ export function PolicyExplorer() {
             </dl>
             {plan.circumstance && !plan.state && (
               <p>
-                Choose your state to see its pension amounts and application
-                routes.
+                Choose your state to see local amounts and application routes.
               </p>
             )}
           </div>
@@ -421,6 +476,46 @@ export function PolicyExplorer() {
                 Change a filter, try a broader description, or open the official
                 national directory.
               </p>
+              {asked && (
+                <div className="policy-clarify">
+                  {ambiguousWidowPhrase(asked) && (
+                    <button
+                      type="button"
+                      className="policy-link"
+                      onClick={() => {
+                        setTopic('All topics');
+                        ask('widow support');
+                      }}
+                    >
+                      Did you mean widow support?
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className="policy-link"
+                    disabled={
+                      interpretationStatus.startsWith('Checking') ||
+                      asked.length > 600
+                    }
+                    onClick={interpretLocally}
+                  >
+                    Try local interpretation
+                  </button>
+                  <output>{interpretationStatus}</output>
+                  {suggestion && (
+                    <button
+                      type="button"
+                      className="policy-link"
+                      onClick={() => {
+                        setTopic('All topics');
+                        ask(asked + ' ' + suggestion);
+                      }}
+                    >
+                      Search for {suggestion}
+                    </button>
+                  )}
+                </div>
+              )}
               <a
                 href="https://www.myscheme.gov.in/"
                 target="_blank"

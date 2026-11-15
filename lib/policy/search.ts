@@ -1,6 +1,7 @@
 import { clamp, trapezoidalMembership } from '@/lib/algorithms/fuzzy';
 import { policyIndex } from './index';
 import type { Policy, Version } from './catalog';
+import { ambiguousWidowPhrase } from './query-intents';
 
 const stop = new Set(
   'a an the i we they in of on for to by how does do did is are me my and can get what which if has will with it policy scheme government help support want need buy buyin purchase buying looking any before after old earlier version historical में के से क्या कैसे मुझे আমি চাই কি জন্য সাহায্য'.split(
@@ -92,6 +93,34 @@ export function understand(
   location = 'All locations',
 ): QueryPlan {
   const text = normalize(query);
+  const singleParent = any(text, [
+    'single parent',
+    'single parents',
+    'single mother',
+    'single father',
+    'single mom',
+    'single mum',
+    'single dad',
+    'raising my children alone',
+    'raising my child alone',
+    'divorced mother',
+    'एकल अभिभावक',
+    'अकेली माँ',
+    'একা মা',
+    'একক অভিভাবক',
+  ]);
+  const orphan = any(text, [
+    'orphan',
+    'orphans',
+    'orphaned',
+    'both parents died',
+    'lost both parents',
+    'both parents passed away',
+    'my parents died',
+    'अनाथ',
+    'এতিম',
+    'অনাথ',
+  ]);
   const bereavement = any(text, [
     'husband died',
     'lost my husband',
@@ -291,6 +320,8 @@ export function understand(
     ...(ration ? ['ration'] : []),
     ...(widow ? ['widow support'] : []),
     ...(pension ? ['pension'] : []),
+    ...(singleParent ? ['single-parent support'] : []),
+    ...(orphan ? ['orphan support'] : []),
     ...(bereavement ? ['bereavement', 'family income loss'] : []),
   ];
   return {
@@ -314,9 +345,13 @@ export function understand(
           : '',
     circumstance: widow
       ? 'Widowhood'
-      : bereavement
-        ? 'Death in the family'
-        : '',
+      : orphan
+        ? 'Orphanhood support'
+        : singleParent
+          ? 'Single-parent family'
+          : bereavement
+            ? 'Death in the family'
+            : '',
     request: any(text, [
       'documents',
       'paperwork',
@@ -356,11 +391,13 @@ export function understand(
               ? 'Access food support'
               : widow
                 ? 'Find widow support'
-                : bereavement
-                  ? 'Find support after a death'
-                  : pension
-                    ? 'Find a pension'
-                    : '',
+                : orphan || singleParent
+                  ? 'Find child and family support'
+                  : bereavement
+                    ? 'Find support after a death'
+                    : pension
+                      ? 'Find a pension'
+                      : '',
     goals: [...new Set(goals)],
     state: location !== 'All locations' ? location : (stateFromQuery ?? ''),
   };
@@ -380,6 +417,7 @@ export interface PolicyMatch {
 }
 
 export function policyMatches(query: string, topic: string, plan: QueryPlan) {
+  if (!plan.goal && ambiguousWidowPhrase(query)) return [];
   const words = terms(query);
   const welfareOnly = Boolean(
     plan.circumstance &&
@@ -389,6 +427,8 @@ export function policyMatches(query: string, topic: string, plan: QueryPlan) {
         'pension',
         'bereavement',
         'family income loss',
+        'single-parent support',
+        'orphan support',
       ].includes(goal),
     ),
   );
@@ -430,8 +470,6 @@ export function policyMatches(query: string, topic: string, plan: QueryPlan) {
     );
     const goals = policy.goals ?? [];
     const shared = plan.goals.filter((goal) => goals.includes(goal));
-    if (welfareOnly && policy.topic !== 'Social support' && !sameName)
-      return [];
     if (welfareOnly && !shared.length && !sameName) return [];
     const broadVehicle = Boolean(plan.asset && goals.includes('vehicle'));
     const broaderBusiness = Boolean(

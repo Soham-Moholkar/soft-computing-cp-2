@@ -34,8 +34,15 @@ try {
     /(\d+) indexed entries · (\d+) evidence profiles · (\d+) with money, eligibility and document graphs/,
   );
   assert.ok(coverage, 'Expected public evidence coverage counts');
-  assert.equal(coverage[1], coverage[2], 'Every indexed entry should have evidence');
-  assert.ok(Number(coverage[3]) >= 103, 'Expected funding, eligibility and documents for at least 103 profiles');
+  assert.equal(
+    coverage[1],
+    coverage[2],
+    'Every indexed entry should have evidence',
+  );
+  assert.ok(
+    Number(coverage[3]) >= 103,
+    'Expected funding, eligibility and documents for at least 103 profiles',
+  );
   await button('Show more').click();
   assert.ok((await page.locator('.policy-match').count()) > 7);
 
@@ -324,6 +331,44 @@ try {
   assert.match(
     await proof('Funding evidence graph').locator('.rs-quote').innerText(),
     /concessional interest rate/,
+  );
+  await ask('I am a single parent and need support for my child');
+  await current
+    .getByRole('heading', {
+      name: 'Mission Vatsalya · Child Sponsorship',
+      exact: true,
+    })
+    .waitFor();
+  await button('Who qualifies').click();
+  assert.match(
+    await proof('Eligibility evidence graph').innerText(),
+    /Widowed, divorced or abandoned/,
+  );
+  await button('Money').click();
+  assert.match(
+    await proof('Funding evidence graph')
+      .locator('.rs-quote a')
+      .getAttribute('href'),
+    /non-institutional-care/,
+  );
+  assert.match(
+    await proof('Funding evidence graph').innerText(),
+    /₹4,000 per child per month/,
+  );
+  await ask('What help is available for orphans in Maharashtra?');
+  await pick('Bal Sangopan Yojana');
+  await button('Documents').click();
+  assert.match(
+    await proof('Document evidence graph')
+      .locator('.rs-quote a')
+      .getAttribute('href'),
+    /202305301635125530/,
+  );
+  await ask('video code');
+  await button('Did you mean widow support?').click();
+  assert.match(
+    await page.locator('.policy-interpretation').innerText(),
+    /Widowhood/,
   );
   await page.setViewportSize({ width: 390, height: 844 });
   assert.equal(

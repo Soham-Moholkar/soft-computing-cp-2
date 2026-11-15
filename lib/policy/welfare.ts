@@ -526,3 +526,179 @@ export const welfarePolicies: Policy[] = [
     ],
   },
 ];
+
+const vatsalya: OfficialSource = {
+  title:
+    'Ministry of Women and Child Development · Mission Vatsalya Guidelines',
+  url: 'https://www.spniwcd.wcd.gov.in/uploads/pdf/1714390625_pDwvtjA0sD.pdf',
+  locator: '§4.1.2 · Criteria for sponsorship',
+};
+const balSangopan: OfficialSource = {
+  title:
+    'Maharashtra Women and Child Development · Government Resolution of 30 May 2023',
+  url: 'https://gr.maharashtra.gov.in/Site/Upload/Government%20Resolutions/Marathi/202305301635125530.pdf',
+  locator: '§1 · Eligible children',
+};
+const familyGoals = ['single-parent support', 'orphan support'];
+const familyKeywords =
+  'single parent single mother single father single mom single dad orphan orphans orphaned child children sponsorship kinship care अनाथ একা মা এতিম অনাথ';
+
+welfarePolicies.push(
+  {
+    id: 'mission-vatsalya',
+    name: 'Mission Vatsalya · Child Sponsorship',
+    topic: 'Social support',
+    goals: familyGoals,
+    keywords: familyKeywords + ' mission vatsalya',
+    versions: [
+      {
+        id: 'guidelines',
+        label: 'National guidelines and application example',
+        years: [2022],
+        source: vatsalya,
+        summary:
+          'Child sponsorship for eligible children in vulnerable circumstances. The district assesses the child’s situation, care arrangement and applicable conditions.',
+        rules: [
+          evidence(
+            'path',
+            'District approval',
+            'is assessed through',
+            'District Child Protection Unit and district approval committee',
+            'The district identifies vulnerable children and the approval committee reviews sponsorship. Contact your district office about applying.',
+            {
+              ...vatsalya,
+              locator:
+                '§4.1.1 and §4.1.5 · Government-aided sponsorship and approval',
+            },
+          ),
+          evidence(
+            'eligibility',
+            'Single-parent families',
+            'considers a child whose mother is',
+            'Widowed, divorced or abandoned',
+            'The guidelines list these circumstances and other routes for children needing care and protection. The district assesses the child’s eligibility.',
+            vatsalya,
+          ),
+          evidence(
+            'eligibility',
+            'Orphans in family care',
+            'considers',
+            'Orphaned children living with extended family',
+            'This is an explicit sponsorship category. The district assesses the individual care arrangement and applicable conditions.',
+            vatsalya,
+          ),
+          evidence(
+            'eligibility',
+            'Preventive sponsorship income',
+            'uses income thresholds of',
+            '₹72,000 rural or ₹96,000 elsewhere per year',
+            'The thresholds are for preventive sponsorship under the published guidelines, which also assess deprivation and the child’s circumstances.',
+            {
+              ...vatsalya,
+              locator: '§4.1.3 · Economic criteria for preventive sponsorship',
+            },
+          ),
+          evidence(
+            'funding',
+            'National sponsorship norm',
+            'publishes a grant norm of',
+            '₹4,000 per child per month',
+            'The Ministry publishes this norm for transfers to states for approved sponsorship, foster care or aftercare. The district sanctions individual sponsorship.',
+            {
+              title:
+                'Ministry of Women and Child Development · Non-Institutional Care',
+              url: 'https://www.wcd.gov.in/child/non-institutional-care',
+              locator: 'Brief · Monthly grant and district sanction',
+            },
+          ),
+          evidence(
+            'documents',
+            'State application example',
+            'lists records such as',
+            'Child’s age proof, income proof and applicable family-status documents',
+            'Manipur’s official application lists supporting records such as income evidence, birth or school records, and proof of death or divorce where applicable. Ask your own district for its checklist.',
+            {
+              title:
+                'Manipur Social Welfare Department · Sponsorship application form',
+              url: 'https://socialwelfare.mn.gov.in/media/filer_public/3c/01/3c01c51a-e240-46ea-9aa6-5714cd5f9d41/sponsorship__form_under_mission_vatsalya.pdf',
+              locator: 'Documents to be enclosed',
+            },
+          ),
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bal-sangopan',
+    name: 'Bal Sangopan Yojana · Maharashtra',
+    state: 'Maharashtra',
+    topic: 'Social support',
+    goals: familyGoals,
+    keywords: familyKeywords + ' bal sangopan बालसंगोपन',
+    versions: [
+      {
+        id: '2023',
+        label: 'May 2023 Maharashtra resolution',
+        years: [2023],
+        source: balSangopan,
+        summary:
+          'Maharashtra’s child-care support scheme explicitly lists orphaned children and children from qualifying single-parent families.',
+        rules: [
+          evidence(
+            'path',
+            'District assessment',
+            'uses',
+            'District child protection and Child Welfare Committee process',
+            'The resolution describes district selection and requires the child and caregiver to appear before the Child Welfare Committee.',
+            {
+              ...balSangopan,
+              locator: '§4 item 9 and §5 · Beneficiary selection process',
+            },
+          ),
+          evidence(
+            'eligibility',
+            'Family circumstances',
+            'covers eligible',
+            'Orphaned children and children in single-parent families',
+            'The resolution lists circumstances including a parent’s death, divorce, separation, abandonment, unmarried motherhood and serious illness. It describes additional child-protection routes.',
+            balSangopan,
+          ),
+          evidence(
+            'eligibility',
+            'Age and income',
+            'uses',
+            'Age up to 18 and annual income below ₹2.5 lakh',
+            'The beneficiary selection section describes the age band and income certificate, and gives priority to households below the poverty line.',
+            {
+              ...balSangopan,
+              locator: '§4 items 1, 4–5 · Selection and income evidence',
+            },
+          ),
+          evidence(
+            'funding',
+            'Maintenance grant',
+            'records',
+            '₹2,250 per child per month',
+            'The May resolution records the increase from ₹1,900 to ₹2,250 per child per month. Check the district office for the applicable current rate.',
+            {
+              ...balSangopan,
+              locator:
+                'Introduction · February 2023 increase in maintenance grant',
+            },
+          ),
+          evidence(
+            'documents',
+            'Beneficiary checklist',
+            'lists',
+            'Residence, income, age, school, bank and family-status records',
+            'The resolution lists identity records and what to provide in the relevant family situation, including death certificates or records of separation when applicable.',
+            {
+              ...balSangopan,
+              locator: '§4 · Documents and procedure for beneficiary selection',
+            },
+          ),
+        ],
+      },
+    ],
+  },
+);
