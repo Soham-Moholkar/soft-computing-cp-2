@@ -8,12 +8,6 @@ Run the [local site](http://127.0.0.1:3001/) and open **Policy explorer**. The c
 
 **I am a single parent and need help supporting my children.** Try this or **I need help for an orphan living with relatives**. The explorer finds Mission Vatsalya’s child sponsorship guidance and shows state profiles where indexed. Its eligibility graph explains the exact child and family circumstances in the source.
 
-## Local language model and government directory
-
-When there are no matches, **Try local interpretation** asks Ollama on this computer to classify the wording into a supported search intent. Confirm the suggested wording to rerun the catalogue search. The model supplies the search intent. Amounts, eligibility and source passages come from the catalogue. The Windows launcher defaults to the installed `qwen3:8b` tag when Ollama is present. Set `RATION_POLICY_OLLAMA_MODEL` before starting the launcher to use another already-installed chat model. The catalogue search works when Ollama is unavailable.
-
-[myScheme](https://www.myscheme.gov.in/) is the Government of India’s scheme discovery portal. [MeitY’s API Setu overview](https://docs.apisetu.gov.in/document-central/explore-apisetu/Overview.html) lists myScheme as a service API and explains consumer registration and subscription. Official live integration would require that access and the approved API documentation. The explorer currently links to the public portal.
-
 1. **I want to buy an auto-rickshaw. Can the government help?** The search identifies a three-wheeler purchase and leaves the use unspecified. MUDRA’s published commercial vehicle coverage names auto-rickshaws. Open **Documents** for the indicative lender checklist. PMEGP appears as a broader business option, and Tamil Nadu has a dated, specifically targeted auto-rickshaw subsidy profile.
 2. **I work for Blinkit and need a bike for delivery.** The search identifies two-wheeler, delivery work and platform worker context. Select **Tamil Nadu** to see its registered gig-worker e-scooter programme. The central PM E-DRIVE profile covers eligible electric models. Mention a petrol motorcycle and the electric options drop out.
 3. **I sew clothes for customers and need a sewing machine.** The search identifies an equipment purchase and finds microenterprise equipment finance without needing a scheme name.
@@ -31,6 +25,12 @@ The ranker uses graded activity membership, a trapezoidal wording membership, lo
 - **Who qualifies** shows indexed eligibility criteria or explicit restrictions from the selected version.
 - **Money** shows loan limits, scholarship rates and subsidies as separate sourced edges. Some profiles accept an illustrative project cost. The calculator applies the indexed formula only within its published ceiling, and carries the source into the graph. Its output is a hypothetical formula result.
 - **Documents** shows the official checklist or application route that was indexed for each version. An indicative lender list is labelled as such.
+
+## Local language model and government directory
+
+When the search cannot identify a goal or find matches, **Try local interpretation** asks Ollama on this computer to classify the wording into a supported search intent. Confirm the suggested wording to rerun the catalogue search. The model supplies the search intent. Amounts, eligibility and source passages come from the catalogue. The Windows launcher defaults to the installed `qwen3:8b` tag when Ollama is present. Set `RATION_POLICY_OLLAMA_MODEL` before starting the launcher to use another already-installed chat model. The catalogue search works when Ollama is unavailable.
+
+[myScheme](https://www.myscheme.gov.in/) is the Government of India’s scheme discovery portal. [MeitY’s API Setu overview](https://docs.apisetu.gov.in/document-central/explore-apisetu/Overview.html) lists myScheme as a service API and explains consumer registration and subscription. Official live integration would require that access and the approved API documentation. The explorer currently links to the public portal.
 
 ## Sources and catalogue refresh
 

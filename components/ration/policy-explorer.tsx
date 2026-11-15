@@ -438,6 +438,46 @@ export function PolicyExplorer() {
                 Choose your state to see local amounts and application routes.
               </p>
             )}
+            {(!plan.goal || !matches.length) && (
+              <div className="policy-clarify">
+                {ambiguousWidowPhrase(asked) && (
+                  <button
+                    type="button"
+                    className="policy-link"
+                    onClick={() => {
+                      setTopic('All topics');
+                      ask('widow support');
+                    }}
+                  >
+                    Did you mean widow support?
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className="policy-link"
+                  disabled={
+                    interpretationStatus.startsWith('Checking') ||
+                    asked.length > 600
+                  }
+                  onClick={interpretLocally}
+                >
+                  Try local interpretation
+                </button>
+                <output>{interpretationStatus}</output>
+                {suggestion && (
+                  <button
+                    type="button"
+                    className="policy-link"
+                    onClick={() => {
+                      setTopic('All topics');
+                      ask(asked + ' ' + suggestion);
+                    }}
+                  >
+                    Search for {suggestion}
+                  </button>
+                )}
+              </div>
+            )}
           </div>
         )}
       </section>
@@ -476,46 +516,6 @@ export function PolicyExplorer() {
                 Change a filter, try a broader description, or open the official
                 national directory.
               </p>
-              {asked && (
-                <div className="policy-clarify">
-                  {ambiguousWidowPhrase(asked) && (
-                    <button
-                      type="button"
-                      className="policy-link"
-                      onClick={() => {
-                        setTopic('All topics');
-                        ask('widow support');
-                      }}
-                    >
-                      Did you mean widow support?
-                    </button>
-                  )}
-                  <button
-                    type="button"
-                    className="policy-link"
-                    disabled={
-                      interpretationStatus.startsWith('Checking') ||
-                      asked.length > 600
-                    }
-                    onClick={interpretLocally}
-                  >
-                    Try local interpretation
-                  </button>
-                  <output>{interpretationStatus}</output>
-                  {suggestion && (
-                    <button
-                      type="button"
-                      className="policy-link"
-                      onClick={() => {
-                        setTopic('All topics');
-                        ask(asked + ' ' + suggestion);
-                      }}
-                    >
-                      Search for {suggestion}
-                    </button>
-                  )}
-                </div>
-              )}
               <a
                 href="https://www.myscheme.gov.in/"
                 target="_blank"

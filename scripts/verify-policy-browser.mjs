@@ -364,6 +364,21 @@ try {
       .getAttribute('href'),
     /202305301635125530/,
   );
+  await page.route('**/api/policy/interpret', async (route) => {
+    await route.fulfill({ json: { status: 'ready', intent: 'single_parent' } });
+  });
+  await ask(
+    "My children's other parent left. I'm looking after both kids by myself and need help.",
+  );
+  await button('Try local interpretation').click();
+  await button('Search for single parent support').click();
+  await current
+    .getByRole('heading', {
+      name: 'Mission Vatsalya · Child Sponsorship',
+      exact: true,
+    })
+    .waitFor();
+  await page.unroute('**/api/policy/interpret');
   await ask('video code');
   await button('Did you mean widow support?').click();
   assert.match(
